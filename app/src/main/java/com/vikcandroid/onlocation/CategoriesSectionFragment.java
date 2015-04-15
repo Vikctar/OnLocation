@@ -1,11 +1,13 @@
 package com.vikcandroid.onlocation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -25,6 +27,15 @@ public class CategoriesSectionFragment extends Fragment {
 
         GridView gridView = (GridView) rootView.findViewById(R.id.grid_view);
         gridView.setAdapter(new CatAdapter(rootView.getContext()));
+
+        // Add a click listener (OnItemClickListener) to the gridView items
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), CompanyActivity.class).putExtra(Intent.EXTRA_TEXT, position);
+                startActivity(intent);
+            }
+        });
 
 
 

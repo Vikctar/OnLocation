@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +19,9 @@ import java.util.List;
  */
 public class NearbyFragment extends Fragment {
 
+    // define an ArrayAdapter that takes Strings
     public ArrayAdapter<String> nearbyAdapter;
+
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -71,9 +72,9 @@ public class NearbyFragment extends Fragment {
                         // The current context (this fragment's parent activity)
                         getActivity(),
                         // ID of the list item to populate
-                        R.layout.list_item_nearby,
+                        R.layout.list_item,
                         // Id of text view to populate
-                        R.id.list_item_nearby_textView,
+                        R.id.list_item_textView,
                         // Nearby data
                         nearbyPlaces
                 );

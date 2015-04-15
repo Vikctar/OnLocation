@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.vikcandroid.onlocation.MainActivity" />
         </activity>
+        <activity
+            android:name=".CompanyActivity"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vikcandroid.onlocation.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
