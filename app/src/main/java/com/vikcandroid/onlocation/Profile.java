@@ -14,15 +14,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class Profile extends FragmentActivity {
+public class Profile extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
-        // Setup the actionbar
-        final ActionBar actionBar = getActionBar();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
