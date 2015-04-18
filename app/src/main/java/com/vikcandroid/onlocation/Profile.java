@@ -3,11 +3,15 @@ package com.vikcandroid.onlocation;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.ShareActionProvider;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,9 +60,17 @@ public class Profile extends ActionBarActivity {
      */
     public static class ProfileFragment extends Fragment {
 
+        // Log tag
+        private static final String LOG_TAG = Profile.class.getSimpleName();
+
+        // Share Tag
+        private static final String PROFILE_SHARE_HASHTAG = " #ONLocation";
+
         private String mNearbyStr;
 
         public ProfileFragment() {
+            // Required for the share icon to appear in the action bar
+            setHasOptionsMenu(true);
         }
 
         @Override
@@ -73,6 +85,38 @@ public class Profile extends ActionBarActivity {
                 ((TextView) rootView.findViewById(R.id.profile_text)).setText(mNearbyStr);
             }
             return rootView;
+        }
+
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+            // Inflate the menu; this adds items to the action bar if it's present
+            inflater.inflate(R.menu.profile_fragment, menu);
+
+            // Retrieve the share menu item
+            MenuItem shareItem = menu.findItem(R.id.action_share);
+
+            // Get the provider and hold on it to set/change the share intent.
+            ShareActionProvider shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
+
+            // Attach an intent to this ShareActionProvider. This can be updated anytime,
+            // like when the user selects a new piece of data they might like to share.
+            if (shareActionProvider != null) {
+                shareActionProvider.setShareIntent(createShareBusinessIntent());
+            } else {
+                Log.d(LOG_TAG, "Share Action Provider is null?");
+            }
+
+        }
+        // ShareBusinessIntent
+        @SuppressWarnings("deprecation")
+        private Intent createShareBusinessIntent() {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_TEXT,
+                    mNearbyStr + PROFILE_SHARE_HASHTAG);
+
+            return  shareIntent;
         }
     }
 }

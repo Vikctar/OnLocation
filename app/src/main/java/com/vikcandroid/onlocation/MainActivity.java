@@ -10,8 +10,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuItem;
 
 
 @SuppressWarnings("deprecation")
@@ -48,6 +52,9 @@ public class MainActivity extends ActionBarActivity implements android.support.v
         // Specify that the Home/Up button shouldn't be enabled, since there's no hierarchical parent
         //actionBar.setHomeButtonEnabled(false);
 
+        // Collapse tabs into main action bar
+        //actionBar.setDisplayShowTitleEnabled(false);
+
         // Specify that tabs will be displayed in the action bar.
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -80,6 +87,23 @@ public class MainActivity extends ActionBarActivity implements android.support.v
         }
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        // Add the search view item to the activity
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @SuppressLint("NewApi")
     @Override
