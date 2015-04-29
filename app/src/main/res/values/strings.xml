@@ -23,4 +23,6 @@
     <string name="title_activity_company">Sub Categories</string>
     <string name="Search">action_search</string>
     <string name="action_share">Share</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_location">Location</string>
 </resources>

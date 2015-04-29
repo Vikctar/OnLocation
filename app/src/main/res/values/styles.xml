@@ -23,6 +23,10 @@
         <item name="popupMenuStyle">@style/PopupMenu.Onlocation</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Onlocation</item>
         <item name="actionBarTabStyle">@style/ActionBarTabStyle.Onlocation</item>
+
+        <!-- The Tab Text Style -->
+        <item name="actionBarTabTextStyle">@style/ActionBarTabTextStyle.Onlocation</item>
+
         <item name="actionDropDownStyle">@style/DropDownNav.Onlocation</item>
         <item name="actionBarStyle">@style/ActionBar.Solid.Onlocation</item>
         <item name="actionModeBackground">@drawable/cab_background_top_onlocation</item>
@@ -56,6 +60,11 @@
 
     <style name="ActionBarTabStyle.Onlocation" parent="@style/Widget.AppCompat.ActionBar.TabView">
         <item name="android:background">@drawable/tab_indicator_ab_onlocation</item>
+    </style>
+
+    <!-- Define the text color for the tabs -->
+    <style name="ActionBarTabTextStyle.Onlocation" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/text_tab_indicator</item>
     </style>
 
     <style name="DropDownNav.Onlocation" parent="@style/Widget.AppCompat.Spinner.DropDown.ActionBar">

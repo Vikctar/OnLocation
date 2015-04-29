@@ -101,6 +101,13 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_refresh:
+                return true;
+            case R.id.menu_location:
+                return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
