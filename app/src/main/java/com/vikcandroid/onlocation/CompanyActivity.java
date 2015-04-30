@@ -1,11 +1,7 @@
 package com.vikcandroid.onlocation;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Locale;
 
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -13,13 +9,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 
 public class CompanyActivity extends ActionBarActivity {
@@ -45,8 +36,8 @@ public class CompanyActivity extends ActionBarActivity {
         setContentView(R.layout.activity_company);
 
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
+        // Create the adapter that will return a fragment for each of the
+        // sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
@@ -89,19 +80,30 @@ public class CompanyActivity extends ActionBarActivity {
             super(fm);
         }
 
+
+        // Controls the fragments being displayed.
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
-            // Return a BusinessServices (defined as a static inner class below).
-            return BusinessServices.newInstance(position + 1);
+            // Return a different fragment based on the position.
+            switch (position) {
+                case 0:
+                    return new BusinessServices();
+                case 1:
+                    return new Entertainment();
+                default:
+                    return new Shopping();
+            }
         }
 
+        // Number of pages/fragments
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 17;
         }
 
+        // Get the page titles for the fragments
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
@@ -112,103 +114,38 @@ public class CompanyActivity extends ActionBarActivity {
                     return getString(R.string.entertainment).toUpperCase(l);
                 case 2:
                     return getString(R.string.shopping).toUpperCase(l);
+                case 3:
+                    return getString(R.string.food_drinks).toUpperCase(l);
+                case 4:
+                    return getString(R.string.buildings).toUpperCase(l);
+                case 5:
+                    return getString(R.string.accommodation).toUpperCase(l);
+                case 6:
+                    return getString(R.string.health).toUpperCase(l);
+                case 7:
+                    return getString(R.string.financial_services).toUpperCase(l);
+                case 8:
+                    return getString(R.string.government).toUpperCase(l);
+                case 9:
+                    return getString(R.string.properties).toUpperCase(l);
+                case 10:
+                    return getString(R.string.transport).toUpperCase(l);
+                case 11:
+                    return getString(R.string.automotive).toUpperCase(l);
+                case 12:
+                    return getString(R.string.industry).toUpperCase(l);
+                case 13:
+                    return getString(R.string.public_services).toUpperCase(l);
+                case 14:
+                    return getString(R.string.personal_services).toUpperCase(l);
+                case 15:
+                    return getString(R.string.sports).toUpperCase(l);
+                case 16:
+                    return getString(R.string.computers).toUpperCase(l);
             }
             return null;
         }
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class BusinessServices extends Fragment {
-
-        // Define an ArrayAdapter that takes Strings
-        public ArrayAdapter<String> mBusinessAdapter;
-
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static BusinessServices newInstance(int sectionNumber) {
-            BusinessServices fragment = new BusinessServices();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public BusinessServices() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_company, container, false);
-
-            //Once the root view for the fragment has been created, it's time to
-            // populate the ListView with some data
-
-            // Create the data for the list view
-            String[] businessArray = {
-                    "Advertising", "Business Communications",
-                    "Events and Conferences", "General Office Services",
-                    "Human Resources", "Import and Export Agents",
-                    "Management Consultants", "Marketing",
-                    "Offices and Office Space", "Public Relations",
-                    "Retail Services", "Sales Management", "Staff Training"
-
-            };
-
-            List<String> businessServices = new ArrayList<>(Arrays.asList(businessArray));
-
-            // Now that we have some data, create an ArrayAdapter.
-            // The ArrayAdapter will take some data from a source and use it to
-            // populate the ListView it's attached to.
-            mBusinessAdapter =
-                    new ArrayAdapter<String>(
-                            // The current context (this fragment's parent activity)
-                            getActivity(),
-                            // ID of the list item to populate
-                            R.layout.list_item,
-                            // ID of the text view to populate
-                            R.id.list_item_textView,
-                            // data
-                            businessServices
-                    );
-
-            // Get a reference to the list view and attach this adapter to it
-            ListView listView = (ListView) rootView.findViewById(R.id.listView_company);
-            listView.setAdapter(mBusinessAdapter);
-
-            return rootView;
-        }
-    }
-
-    public static class Entertainment extends Fragment {
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-            View rootView = inflater.inflate(R.layout.fragment_company, container, false);
-            return rootView;
-        }
-    }
-
-
-    public static class Shopping extends Fragment {
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-            View rootView = inflater.inflate(R.layout.fragment_company, container, false);
-
-            return rootView;
-        }
-    }
 
 }

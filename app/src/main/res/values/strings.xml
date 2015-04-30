@@ -2,14 +2,29 @@
     <string name="app_name">ONLocation</string>
 
 
-    <string name="title_section1">Nearby</string>
-    <string name="title_section2">Categories</string>
+    <string name="title_section1">Categories</string>
+    <string name="title_section2">Nearby</string>
     <string name="title_section3">About</string>
 
     <!-- Strings for company activity class -->
     <string name="business_services">Business Services</string>
     <string name="entertainment">Entertainment</string>
     <string name="shopping">Shopping</string>
+    <string name="food_drinks">Food</string>
+    <string name="buildings">Buildings</string>
+    <string name="accommodation">Accommodation</string>
+    <string name="health">Health</string>
+    <string name="financial_services">Financial Services</string>
+    <string name="government">Government Institutions</string>
+    <string name="properties">Properties</string>
+    <string name="transport">Transport</string>
+    <string name="automotive">Automotive</string>
+    <string name="industry">Industries</string>
+    <string name="public_services">Public Services</string>
+    <string name="personal_services">Personal Services</string>
+    <string name="sports">Sports/Recreation</string>
+    <string name="computers">Computers/Internet</string>
+
 
     <string name="hello_world">Hello world!</string>
 
@@ -25,4 +40,6 @@
     <string name="action_share">Share</string>
     <string name="menu_refresh">Refresh</string>
     <string name="menu_location">Location</string>
+    <string name="nearby_text">Nearby</string>
+    <string name="about_text">About</string>
 </resources>

@@ -101,12 +101,17 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        /*
         switch (item.getItemId()) {
-            case R.id.menu_refresh:
+            case R.id.nearby_action:
+                new NearbyFragment();
                 return true;
-            case R.id.menu_location:
+            case R.id.about_action:
+                new AboutFragment();
                 return true;
+
         }
+        */
 
         return super.onOptionsItemSelected(item);
     }
@@ -146,11 +151,11 @@ public class MainActivity extends ActionBarActivity implements android.support.v
             switch (position) {
                 case 0:
                     // First section of the app
-                    return new NearbyFragment();
+                    return new CategoriesSectionFragment();
 
                 case 1:
                     // The second tab
-                    return new CategoriesSectionFragment();
+                    return new NearbyFragment();
 
                 default:
                     // The third tab

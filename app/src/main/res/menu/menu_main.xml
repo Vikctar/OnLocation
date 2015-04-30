@@ -15,16 +15,28 @@
         android:icon="@drawable/ic_action_search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView"/>
+<!--
 
-    <!-- Refresh -->
     <item android:id="@+id/menu_refresh"
         android:icon="@drawable/ic_action_refresh"
         android:title="@string/menu_refresh"
         app:showAsAction="ifRoom"/>
 
-    <!-- Location -->
+
     <item android:id="@+id/menu_location"
         android:icon="@drawable/ic_action_location"
         android:title="@string/menu_location"
         app:showAsAction="ifRoom" />
+
+
+    <item android:id="@+id/nearby_action"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/nearby_text" />
+
+
+    <item
+        android:id="@+id/about_action"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/about_text"/>
+-->
 </menu>
