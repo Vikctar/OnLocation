@@ -1,12 +1,17 @@
-package com.vikcandroid.onlocation;
+package com.vikcandroid.onlocation.comapany_fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.vikcandroid.onlocation.Profile;
+import com.vikcandroid.onlocation.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,7 +73,7 @@ public class BusinessServices extends Fragment {
         // The ArrayAdapter will take some data from a source and use it to
         // populate the ListView it's attached to.
         mBusinessAdapter =
-                new ArrayAdapter<String>(
+                new ArrayAdapter<>(
                         // The current context (this fragment's parent activity)
                         getActivity(),
                         // ID of the list item to populate
@@ -82,6 +87,16 @@ public class BusinessServices extends Fragment {
         // Get a reference to the list view and attach this adapter to it
         ListView listView = (ListView) rootView.findViewById(R.id.listView_company);
         listView.setAdapter(mBusinessAdapter);
+
+        // Make the listView items clickable
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String biz = mBusinessAdapter.getItem(position);
+                Intent intent = new Intent(getActivity(), Profile.class).putExtra(Intent.EXTRA_TEXT, biz);
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }

@@ -12,6 +12,24 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.vikcandroid.onlocation.comapany_fragments.Accommodation;
+import com.vikcandroid.onlocation.comapany_fragments.Automotive;
+import com.vikcandroid.onlocation.comapany_fragments.BusinessServices;
+import com.vikcandroid.onlocation.comapany_fragments.ComputersAndInternet;
+import com.vikcandroid.onlocation.comapany_fragments.Construction;
+import com.vikcandroid.onlocation.comapany_fragments.Entertainment;
+import com.vikcandroid.onlocation.comapany_fragments.Finance;
+import com.vikcandroid.onlocation.comapany_fragments.Food;
+import com.vikcandroid.onlocation.comapany_fragments.Government;
+import com.vikcandroid.onlocation.comapany_fragments.Health;
+import com.vikcandroid.onlocation.comapany_fragments.Industry;
+import com.vikcandroid.onlocation.comapany_fragments.PersonalServices;
+import com.vikcandroid.onlocation.comapany_fragments.Properties;
+import com.vikcandroid.onlocation.comapany_fragments.PublicAndSocial;
+import com.vikcandroid.onlocation.comapany_fragments.Shopping;
+import com.vikcandroid.onlocation.comapany_fragments.SportsAndRecreation;
+import com.vikcandroid.onlocation.comapany_fragments.Travel;
+
 
 public class CompanyActivity extends ActionBarActivity {
 
@@ -91,16 +109,46 @@ public class CompanyActivity extends ActionBarActivity {
                     return new BusinessServices();
                 case 1:
                     return new Entertainment();
-                default:
+                case 2:
                     return new Shopping();
+                case 3:
+                    return new Food();
+                case 4:
+                    return new Construction();
+                case 5:
+                    return new Accommodation();
+                case 6:
+                    return new Health();
+                case 7:
+                    return new Finance();
+                case 8:
+                    return new Government();
+                case 9:
+                    return new Properties();
+                case 10:
+                    return new Travel();
+                case 11:
+                    return new Automotive();
+                case 12:
+                    return new Industry();
+                case 13:
+                    return new PublicAndSocial();
+                case 14:
+                    return new PersonalServices();
+                case 15:
+                    return new SportsAndRecreation();
+                case 16:
+                    return new ComputersAndInternet();
+                default:
+                    return new Construction();
             }
         }
 
         // Number of pages/fragments
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 17;
+            // Show  total pages.
+            return 18;
         }
 
         // Get the page titles for the fragments
@@ -142,6 +190,8 @@ public class CompanyActivity extends ActionBarActivity {
                     return getString(R.string.sports).toUpperCase(l);
                 case 16:
                     return getString(R.string.computers).toUpperCase(l);
+                case 17:
+                    return getString(R.string.construction).toUpperCase(l);
             }
             return null;
         }

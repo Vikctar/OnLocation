@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +33,41 @@ public class CategoriesSectionFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), CompanyActivity.class).putExtra(Intent.EXTRA_TEXT, position);
+                Intent intent = new Intent(getActivity(), CompanyActivity.class).
+                        putExtra(Intent.EXTRA_TEXT, position);
                 startActivity(intent);
+
+//                switch (position) {
+//                    case 0:
+//
+//
+//                        // Create new fragment and transaction
+//                        Fragment bizFragment = new BusinessServices();
+//                        FragmentTransaction bizTransaction = getFragmentManager().beginTransaction();
+//
+//                        // Replace whatever is in the fragment_container view with this fragment,
+//                        // and add the transaction to the back stack
+//                        bizTransaction.replace(R.id.fragment_container, bizFragment);
+//                        bizTransaction.addToBackStack(null);
+//
+//                        // Commit the transaction
+//                        bizTransaction.commit();
+//                        break;
+//
+//                    case 1:
+//                        // Create new fragment and transaction
+//                        Fragment entFragment = new Entertainment();
+//                        FragmentTransaction entTransaction = getFragmentManager().beginTransaction();
+//
+//                        // Replace whatever is in the fragment_container view with this fragment,
+//                        // and add the transaction to the back stack
+//                        entTransaction.replace(R.id.fragment_container, entFragment);
+//                        entTransaction.addToBackStack(null);
+//
+//                        // Commit the transaction
+//                        entTransaction.commit();
+//                        break;
+//                }
             }
         });
 
@@ -50,26 +84,26 @@ public class CategoriesSectionFragment extends Fragment {
         public CatAdapter(Context context) {
             mInflater = LayoutInflater.from(context);
 
-            items.add(new CatAdapter.Item(R.drawable.business_services));
-            items.add(new CatAdapter.Item(R.drawable.enterainment_lifestyle));
-            items.add(new CatAdapter.Item(R.drawable.shopping));
-            items.add(new CatAdapter.Item(R.drawable.food_and_drinks));
+            items.add(new CatAdapter.Item(R.drawable.icon_business_services));
+            items.add(new CatAdapter.Item(R.drawable.icon_entertainment));
+            items.add(new CatAdapter.Item(R.drawable.icon_shopping));
+            items.add(new CatAdapter.Item(R.drawable.icon_food));
             items.add(new CatAdapter.Item(R.drawable.buildings));
-            items.add(new CatAdapter.Item(R.drawable.accommodation));
-            items.add(new CatAdapter.Item(R.drawable.health));
-            items.add(new CatAdapter.Item(R.drawable.financial_services));
-            items.add(new CatAdapter.Item(R.drawable.government_institutions));
-            items.add(new CatAdapter.Item(R.drawable.properties));
-            items.add(new CatAdapter.Item(R.drawable.travel_and_transportation));
-            items.add(new CatAdapter.Item(R.drawable.automotive));
-            items.add(new CatAdapter.Item(R.drawable.industries));
-            items.add(new CatAdapter.Item(R.drawable.public_and_social_services));
-            items.add(new CatAdapter.Item(R.drawable.personal_services));
-            items.add(new CatAdapter.Item(R.drawable.sports_and_recreation));
-            items.add(new CatAdapter.Item(R.drawable.computers_internet));
-            items.add(new CatAdapter.Item(R.drawable.hot_deals));
-            items.add(new CatAdapter.Item(R.drawable.business_contacts));
-            items.add(new CatAdapter.Item(R.drawable.contact_us));
+            items.add(new CatAdapter.Item(R.drawable.icon_accomodation));
+            items.add(new CatAdapter.Item(R.drawable.icon_healthcare));
+            items.add(new CatAdapter.Item(R.drawable.icon_financial));
+            items.add(new CatAdapter.Item(R.drawable.icon_government));
+            items.add(new CatAdapter.Item(R.drawable.icon_properties));
+            items.add(new CatAdapter.Item(R.drawable.icon_transport));
+            items.add(new CatAdapter.Item(R.drawable.icon_automotive));
+            items.add(new CatAdapter.Item(R.drawable.icon_industry));
+            items.add(new CatAdapter.Item(R.drawable.icon_public));
+            items.add(new CatAdapter.Item(R.drawable.icon_personal));
+            items.add(new CatAdapter.Item(R.drawable.icon_sports));
+            items.add(new CatAdapter.Item(R.drawable.icon_computer));
+            items.add(new CatAdapter.Item(R.drawable.icon_hot_deals));
+            items.add(new CatAdapter.Item(R.drawable.icon_business_contacts));
+            items.add(new CatAdapter.Item(R.drawable.icon_building_construction));
 
         }
 

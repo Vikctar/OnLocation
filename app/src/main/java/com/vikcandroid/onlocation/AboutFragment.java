@@ -1,11 +1,13 @@
 package com.vikcandroid.onlocation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableRow;
+import android.widget.Toast;
 
 /**
 * Created by vikc on 4/14/15.
@@ -28,7 +30,44 @@ public class AboutFragment extends Fragment {
         trPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent privacyIntent = new Intent(getActivity(), WebView.class);
+                privacyIntent.putExtra("KEY", 1);
+                startActivity(privacyIntent);
+            }
+        });
 
+        trTerms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent termsIntent = new Intent(getActivity(), WebView.class);
+                termsIntent.putExtra("KEY", 2);
+                startActivity(termsIntent);
+            }
+        });
+
+        trContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent contactIntent = new Intent(Intent.ACTION_SEND);
+                    contactIntent.putExtra("android.intent.extra.EMAIL", new String[] {"support@onlocation.com"});
+                    contactIntent.setClassName("com.google.android.gm", "com.google.android.gm.ComposeActivityGmail");
+                    contactIntent.putExtra(Intent.EXTRA_SUBJECT, "Contact Support");
+                    contactIntent.putExtra(Intent.EXTRA_TEXT, "\n ONLocation Mobile App.");
+                    contactIntent.setType("text/plain");
+                    startActivity(contactIntent);
+
+                } catch (Exception e) {
+                    Toast.makeText(getActivity(), "Gmail Application Not Found", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        trAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent addIntent = new Intent(getActivity(), AddBusiness.class);
+                //startActivity(addIntent);
             }
         });
 

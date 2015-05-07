@@ -1,12 +1,17 @@
-package com.vikcandroid.onlocation;
+package com.vikcandroid.onlocation.comapany_fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.vikcandroid.onlocation.Profile;
+import com.vikcandroid.onlocation.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,9 +61,9 @@ public class Entertainment extends Fragment {
         // Create the data for the list view
         String[] entertainmentArray = {
                 "Arts and Crafts", "Fashion", "Fine Arts",
-                "Gaming", "Music", "Parties and Events",
-                "Performing Arts", "Pets", "Photography",
-                "Wedding"
+                "Gaming", "Theater and Musicals", "Parties and Events",
+                "Performing Arts", "Bars", "Photography", "Media Production",
+                "Casino", "Movie", "Museums", "Nightclubs"
         };
 
         List<String> entertainment = new ArrayList<>(Arrays.asList(entertainmentArray));
@@ -67,7 +72,7 @@ public class Entertainment extends Fragment {
         // which will take some data from  a source and use it to
         // populate the ListView it's attached to
         mEntertainmentAdapter =
-                new ArrayAdapter<String>(
+                new ArrayAdapter<>(
                         // The current context (this fragment's parent activity)
                         getActivity(),
                         // ID of the list item to populate
@@ -81,6 +86,16 @@ public class Entertainment extends Fragment {
         // Get a reference to the list view and attach the adapter to it
         ListView listView = (ListView) rootView.findViewById(R.id.listView_company);
         listView.setAdapter(mEntertainmentAdapter);
+
+        // Make the listView items clickable
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String enter = mEntertainmentAdapter.getItem(position);
+                Intent intent = new Intent(getActivity(), Profile.class).putExtra(Intent.EXTRA_TEXT, enter);
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }
