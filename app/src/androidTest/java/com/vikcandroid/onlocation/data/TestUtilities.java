@@ -19,7 +19,7 @@ import data.BusinessContract;
 import data.BusinessDBHelper;
 
 /*
-    Students: These are functions and some test data to make it easier to test your database and
+    These are functions and some test data to make it easier to test your database and
     Content Provider.  Note that you'll want your WeatherContract class to exactly match the one
     in our solution to use these as-given.
  */
@@ -47,7 +47,7 @@ public class TestUtilities extends AndroidTestCase {
     }
 
     /*
-        Students: Use this to create some default business values for your database tests.
+         Use this to create some default business values for your database tests.
      */
     static ContentValues createBusinessValues(long categoryRowId, Long subCategoryRowId) {
         ContentValues businessValues = new ContentValues();
@@ -64,7 +64,7 @@ public class TestUtilities extends AndroidTestCase {
     }
 
     /*
-        Students: You can uncomment this helper function once you have finished creating the
+        You can uncomment this helper function once you have finished creating the
         CategoryEntry part of the BusinessContract.
      */
     static ContentValues createComputersCategoryValues() {
@@ -79,7 +79,7 @@ public class TestUtilities extends AndroidTestCase {
     }
 
     /*
-        Students: You can uncomment this function once you have finished creating the
+        You can uncomment this function once you have finished creating the
         LocationEntry part of the WeatherContract as well as the WeatherDbHelper.
      */
     static long insertComputerCategoryValues(Context context) {
@@ -98,7 +98,7 @@ public class TestUtilities extends AndroidTestCase {
     }
 
     /*
-        Students: The functions we provide inside of TestProvider use this utility class to test
+        The functions we provide inside of TestProvider use this utility class to test
         the ContentObserver callbacks using the PollingCheck class that we grabbed from the Android
         CTS tests.
 

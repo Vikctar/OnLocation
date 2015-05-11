@@ -15,6 +15,7 @@
  */
 package com.vikcandroid.onlocation.data;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
@@ -42,13 +43,12 @@ public class TestDb extends AndroidTestCase {
     }
 
     /*
-        Students: Uncomment this test once you've written the code to create the Location
+        Uncomment this test once you've written the code to create the Category
         table.  Note that you will have to have chosen the same column names that I did in
         my solution for this test to compile, so if you haven't yet done that, this is
         a good time to change your column names to match mine.
 
-        Note that this only tests that the Location table has the correct columns, since we
-        give you the code for the weather table.  This test does not look at the
+        Note that this only tests that the Category table has the correct columns.
      */
     public void testCreateDb() throws Throwable {
         // build a HashSet of all of the table names we wish to look for
@@ -109,34 +109,67 @@ public class TestDb extends AndroidTestCase {
     }
 
     /*
-        Students:  Here is where you will build code to test that we can insert and query the
+        Here is where you will build code to test that we can insert and query the
         location database.  We've done a lot of work for you.  You'll want to look in TestUtilities
-        where you can uncomment out the "createNorthPoleLocationValues" function.  You can
+        where you can uncomment out the "createComputerCategoryValues" function.  You can
         also make use of the ValidateCurrentRecord function from within TestUtilities.
     */
     public void testCategoryTable() {
         // First step: Get reference to writable database
+        // If there's an error in those massive SQL table creation Strings,
+        // errors will be thrown here when you try to get a writable database.
+        BusinessDBHelper dbHelper = new BusinessDBHelper(mContext);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        // Create ContentValues of what you want to insert
-        // (you can use the createNorthPoleLocationValues if you wish)
+        // Second Step Create ContentValues of what you want to insert
+        // (you can use the createComputerCategoryValues if you wish)
+        ContentValues testValues = TestUtilities.createComputersCategoryValues();
 
-        // Insert ContentValues into database and get a row ID back
+        // Third step: Insert ContentValues into database and get a row ID back
+        long categoryRowId;
+        categoryRowId = db.insert(BusinessContract.CategoryEntry.TABLE_NAME, null, testValues);
 
-        // Query the database and receive a Cursor back
+        // Verify we got a row back
+        assertTrue(categoryRowId != -1);
 
-        // Move the cursor to a valid database row
+        // Data's inserted. IN THEORY. Now pull some out to stare at it and verify it made
+        // the round trip.
 
-        // Validate data in resulting Cursor with the original ContentValues
+        // Fourth step: Query the database and receive a Cursor back
+        // A Cursor is our primary interface to the query results.
+        Cursor cursor = db.query(
+                BusinessContract.CategoryEntry.TABLE_NAME, // Table to Query
+                null, // all columns
+                null, // Columns for the "where" clause
+                null, // Values for the "where" clause
+                null, // columns to group by
+                null, // columns to filter by rows of groups
+                null // sort order
+        );
+
+        // Move the cursor to a valid database row and check to see if we got any records back
+        // from the query
+        assertTrue( " Error: No Records returned from the category query", cursor.moveToFirst() );
+
+        // Fifth step: Validate data in resulting Cursor with the original ContentValues
         // (you can use the validateCurrentRecord function in TestUtilities to validate the
         // query if you like)
+        TestUtilities.validateCurrentRecord("Error: Category Query Validation Failed",
+                cursor, testValues);
 
-        // Finally, close the cursor and database
+        // Move the cursor to demonstrate that there is only one record in the database
+        assertFalse( "Error: More than one record returned from location query",
+                cursor.moveToNext() );
+
+        // Sixth step: Close the cursor and database
+        cursor.close();;
+        db.close();
 
     }
 
     /*
-        Students:  Here is where you will build code to test that we can insert and query the
-        database.  We've done a lot of work for you.  You'll want to look in TestUtilities
+        Here is where you will build code to test that we can insert and query the
+        database. You'll want to look in TestUtilities
         where you can use the "createBusinessValues" function.  You can
         also make use of the validateCurrentRecord function from within TestUtilities.
      */
@@ -169,9 +202,9 @@ public class TestDb extends AndroidTestCase {
 
 
     /*
-        Students: This is a helper method for the testBusinessTable quiz. You can move your
+        This is a helper method for the testBusinessTable quiz. You can move your
         code from testLocationTable to here so that you can call this code from both
-        testWeatherTable and testLocationTable.
+        testBusinessTable and testCategoryTable.
      */
     public long insertCategory() {
         return -1L;
