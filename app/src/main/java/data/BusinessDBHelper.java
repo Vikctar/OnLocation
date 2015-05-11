@@ -34,8 +34,14 @@ public class BusinessDBHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_SUB_CATEGORY_TABLE = "CREATE TABLE " + BusinessContract.SubCategoryEntry.TABLE_NAME +
                 " (" +
                 BusinessContract.SubCategoryEntry._ID + " INTEGER PRIMARY KEY," +
-                BusinessContract.SubCategoryEntry.COLUMN_SUB_CATEGORY_NAME + " TEXT UNIQUE NOT NULL " +
-                " );";
+                BusinessContract.SubCategoryEntry.COLUMN_SUB_CATEGORY_NAME + " TEXT UNIQUE NOT NULL, " +
+
+                BusinessContract.SubCategoryEntry.COLUMN_CATEGORY_KEY + " INTEGER NOT NULL, " +
+
+                //Set up the foreign key
+                " FOREIGN KEY (" + BusinessContract.SubCategoryEntry.COLUMN_CATEGORY_KEY + ") REFERENCES " +
+                BusinessContract.CategoryEntry.TABLE_NAME + " (" + BusinessContract.CategoryEntry._ID +
+                " ));";
 
         final String SQL_CREATE_BUSINESS_TABLE = "CREATE TABLE " + BusinessContract.BusinessEntry.TABLE_NAME +
                 " (" +
@@ -53,7 +59,7 @@ public class BusinessDBHelper extends SQLiteOpenHelper {
 
                 BusinessContract.BusinessEntry.COLUMN_BUSINESS_ID + " INTEGER NOT NULL, " +
                 BusinessContract.BusinessEntry.COLUMN_BUSINESS_NAME + " TEXT NOT NULL, " +
-                BusinessContract.BusinessEntry.COLUMN_PHONE + " REAL NOT NULL, " +
+                BusinessContract.BusinessEntry.COLUMN_PHONE + " TEXT NOT NULL, " +
                 BusinessContract.BusinessEntry.COLUMN_EMAIL + " TEXT NOT NULL, " +
                 BusinessContract.BusinessEntry.COLUMN_BUILDING + " TEXT NOT NULL, " +
                 BusinessContract.BusinessEntry.COLUMN_STREET + " TEXT NOT NULL, " +

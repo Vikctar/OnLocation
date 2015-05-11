@@ -60,6 +60,9 @@ public class BusinessContract {
         // Table name
         public static final String TABLE_NAME = "sub_category";
 
+        // Column with the foreign key into the category table
+        public static final String COLUMN_CATEGORY_KEY = "category_id";
+
         // sub_category_name
         public static final String COLUMN_SUB_CATEGORY_NAME = "sub_category_name";
 
