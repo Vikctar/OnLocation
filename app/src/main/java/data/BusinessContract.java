@@ -61,7 +61,7 @@ public class BusinessContract {
         public static final String TABLE_NAME = "sub_category";
 
         // sub_category_name
-        public static final String SUB_CATEGORY_NAME = "sub_category_name";
+        public static final String COLUMN_SUB_CATEGORY_NAME = "sub_category_name";
 
     }
 }

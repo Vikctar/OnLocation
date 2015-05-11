@@ -15,8 +15,13 @@
  */
 package com.vikcandroid.onlocation.data;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
 
+import java.util.HashSet;
+
+import data.BusinessContract;
 import data.BusinessDBHelper;
 
 public class TestDb extends AndroidTestCase {
@@ -45,62 +50,63 @@ public class TestDb extends AndroidTestCase {
         Note that this only tests that the Location table has the correct columns, since we
         give you the code for the weather table.  This test does not look at the
      */
-//    public void testCreateDb() throws Throwable {
-//        // build a HashSet of all of the table names we wish to look for
-//        // Note that there will be another table in the DB that stores the
-//        // Android metadata (db version information)
-//        final HashSet<String> tableNameHashSet = new HashSet<String>();
-//        tableNameHashSet.add(WeatherContract.LocationEntry.TABLE_NAME);
-//        tableNameHashSet.add(WeatherContract.WeatherEntry.TABLE_NAME);
-//
-//        mContext.deleteDatabase(BusinessDbHelper.DATABASE_NAME);
-//        SQLiteDatabase db = new BusinessDbHelper(
-//                this.mContext).getWritableDatabase();
-//        assertEquals(true, db.isOpen());
-//
-//        // have we created the tables we want?
-//        Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
-//
-//        assertTrue("Error: This means that the database has not been created correctly",
-//                c.moveToFirst());
-//
-//        // verify that the tables have been created
-//        do {
-//            tableNameHashSet.remove(c.getString(0));
-//        } while( c.moveToNext() );
-//
-//        // if this fails, it means that your database doesn't contain both the category entry
-//        // and business entry tables
-//        assertTrue("Error: Your database was created without both the category entry and business entry tables",
-//                tableNameHashSet.isEmpty());
-//
-//        // now, do our tables contain the correct columns?
-//        c = db.rawQuery("PRAGMA table_info(" + BusinessContract.CategoryEntry.TABLE_NAME + ")",
-//                null);
-//
-//        assertTrue("Error: This means that we were unable to query the database for table information.",
-//                c.moveToFirst());
-//
-//        // Build a HashSet of all of the column names we want to look for
-//        final HashSet<String> categoryColumnHashSet = new HashSet<String>();
-//        categoryColumnHashSet.add(BusinessContract.CategoryEntry._ID);
-//        categoryColumnHashSet.add(BusinessContract.CategoryEntry.COLUMN_CATEGORY_NAME);
+    public void testCreateDb() throws Throwable {
+        // build a HashSet of all of the table names we wish to look for
+        // Note that there will be another table in the DB that stores the
+        // Android metadata (db version information)
+        final HashSet<String> tableNameHashSet = new HashSet<String>();
+        tableNameHashSet.add(BusinessContract.CategoryEntry.TABLE_NAME);
+        tableNameHashSet.add(BusinessContract.SubCategoryEntry.TABLE_NAME);
+        tableNameHashSet.add(BusinessContract.BusinessEntry.TABLE_NAME);
+
+        mContext.deleteDatabase(BusinessDBHelper.DATABASE_NAME);
+        SQLiteDatabase db = new BusinessDBHelper(
+                this.mContext).getWritableDatabase();
+        assertEquals(true, db.isOpen());
+
+        // have we created the tables we want?
+        Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
+
+        assertTrue("Error: This means that the database has not been created correctly",
+                c.moveToFirst());
+
+        // verify that the tables have been created
+        do {
+            tableNameHashSet.remove(c.getString(0));
+        } while( c.moveToNext() );
+
+        // if this fails, it means that your database doesn't contain both the category entry
+        // and business entry tables
+        assertTrue("Error: Your database was created without both the category entry and business entry tables",
+                tableNameHashSet.isEmpty());
+
+        // now, do our tables contain the correct columns?
+        c = db.rawQuery("PRAGMA table_info(" + BusinessContract.CategoryEntry.TABLE_NAME + ")",
+                null);
+
+        assertTrue("Error: This means that we were unable to query the database for table information.",
+                c.moveToFirst());
+
+        // Build a HashSet of all of the column names we want to look for
+        final HashSet<String> categoryColumnHashSet = new HashSet<String>();
+        categoryColumnHashSet.add(BusinessContract.CategoryEntry._ID);
+        categoryColumnHashSet.add(BusinessContract.CategoryEntry.COLUMN_CATEGORY_NAME);
 //        categoryColumnHashSet.add(BusinessContract.CategoryEntry.COLUMN_COORD_LAT);
 //        categoryColumnHashSet.add(BusinessContract.CategoryEntry.COLUMN_COORD_LONG);
 //        categoryColumnHashSet.add(BusinessContract.CategoryEntry.COLUMN_LOCATION_SETTING);
-//
-//        int columnNameIndex = c.getColumnIndex("name");
-//        do {
-//            String columnName = c.getString(columnNameIndex);
-//            locationColumnHashSet.remove(columnName);
-//        } while(c.moveToNext());
-//
-//        // if this fails, it means that your database doesn't contain all of the required location
-//        // entry columns
-//        assertTrue("Error: The database doesn't contain all of the required location entry columns",
-//                locationColumnHashSet.isEmpty());
-//        db.close();
-//    }
+
+        int columnNameIndex = c.getColumnIndex("name");
+        do {
+            String columnName = c.getString(columnNameIndex);
+            categoryColumnHashSet.remove(columnName);
+        } while(c.moveToNext());
+
+        // if this fails, it means that your database doesn't contain all of the required category
+        // entry columns
+        assertTrue("Error: The database doesn't contain all of the required category entry columns",
+                categoryColumnHashSet.isEmpty());
+        db.close();
+    }
 
     /*
         Students:  Here is where you will build code to test that we can insert and query the

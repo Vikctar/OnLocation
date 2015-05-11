@@ -21,6 +21,22 @@ public class BusinessDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // Create  table to hold categories. A category consists of the string supplied in the
+        // category name
+        final String SQL_CREATE_CATEGORY_TABLE = "CREATE TABLE " + BusinessContract.CategoryEntry.TABLE_NAME +
+                " (" +
+                BusinessContract.CategoryEntry._ID + " INTEGER PRIMARY KEY," +
+                BusinessContract.CategoryEntry.COLUMN_CATEGORY_NAME + " TEXT UNIQUE NOT NULL " +
+                " );";
+
+        // Create a table to hold the sub_categories. A sub_category consists of the string supplied in the
+        // sub_category name
+        final String SQL_CREATE_SUB_CATEGORY_TABLE = "CREATE TABLE " + BusinessContract.SubCategoryEntry.TABLE_NAME +
+                " (" +
+                BusinessContract.SubCategoryEntry._ID + " INTEGER PRIMARY KEY," +
+                BusinessContract.SubCategoryEntry.COLUMN_SUB_CATEGORY_NAME + " TEXT UNIQUE NOT NULL " +
+                " );";
+
         final String SQL_CREATE_BUSINESS_TABLE = "CREATE TABLE " + BusinessContract.BusinessEntry.TABLE_NAME +
                 " (" +
                 // Why AutoIncrement here, and not above?
@@ -36,7 +52,7 @@ public class BusinessDBHelper extends SQLiteOpenHelper {
                 BusinessContract.BusinessEntry.COLUMN_SUB_CAT_KEY + " INTEGER NOT NULL, " +
 
                 BusinessContract.BusinessEntry.COLUMN_BUSINESS_ID + " INTEGER NOT NULL, " +
-                BusinessContract.BusinessEntry.COLUMN_BUSINESS_NAME + " TEXT NOT NOT NULL, " +
+                BusinessContract.BusinessEntry.COLUMN_BUSINESS_NAME + " TEXT NOT NULL, " +
                 BusinessContract.BusinessEntry.COLUMN_PHONE + " REAL NOT NULL, " +
                 BusinessContract.BusinessEntry.COLUMN_EMAIL + " TEXT NOT NULL, " +
                 BusinessContract.BusinessEntry.COLUMN_BUILDING + " TEXT NOT NULL, " +
@@ -47,8 +63,10 @@ public class BusinessDBHelper extends SQLiteOpenHelper {
                 BusinessContract.CategoryEntry.TABLE_NAME + " (" + BusinessContract.CategoryEntry._ID + "), " +
 
                 " FOREIGN KEY (" + BusinessContract.BusinessEntry.COLUMN_SUB_CAT_KEY + ") REFERENCES " +
-                BusinessContract.SubCategoryEntry.TABLE_NAME + " (" + BusinessContract.SubCategoryEntry._ID + ");";
+                BusinessContract.SubCategoryEntry.TABLE_NAME + " (" + BusinessContract.SubCategoryEntry._ID + "));";
 
+        db.execSQL(SQL_CREATE_CATEGORY_TABLE);
+        db.execSQL(SQL_CREATE_SUB_CATEGORY_TABLE);
         db.execSQL(SQL_CREATE_BUSINESS_TABLE);
     }
 
