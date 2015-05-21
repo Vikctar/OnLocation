@@ -81,9 +81,10 @@ public class TestUtilities extends AndroidTestCase {
     /*
          Create some default sub-category values for database tests
      */
-    static ContentValues createSubCategoryValues() {
+    static ContentValues createSubCategoryValues(long categoryRowId) {
         // Create a new map of values, where column names are the keys
         ContentValues subCatValues = new ContentValues();
+        subCatValues.put(BusinessContract.SubCategoryEntry.COLUMN_CATEGORY_KEY, categoryRowId);
         subCatValues.put(BusinessContract.SubCategoryEntry.COLUMN_SUB_CATEGORY_NAME, TEST_SUB_CATEGORY);
 
         return subCatValues;
@@ -111,20 +112,20 @@ public class TestUtilities extends AndroidTestCase {
     /*
         Test for insertion into sub_cat table
      */
-    static long insertItServicesSubCatValues(Context context) {
-        // insert test records into the database
-        BusinessDBHelper dbHelper = new BusinessDBHelper(context);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        ContentValues subCatValues = TestUtilities.createSubCategoryValues();
-
-        long subCatRowId;
-        subCatRowId = db.insert(BusinessContract.SubCategoryEntry.TABLE_NAME, null, subCatValues);
-
-        // Verify we got a row back
-        assertTrue("Error: Failure to insert IT Services Sub_Category value", subCatRowId != -1);
-
-        return subCatRowId;
-    }
+//    static long insertItServicesSubCatValues(Context context) {
+//        // insert test records into the database
+//        BusinessDBHelper dbHelper = new BusinessDBHelper(context);
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//        ContentValues subCatValues = TestUtilities.createSubCategoryValues();
+//
+//        long subCatRowId;
+//        subCatRowId = db.insert(BusinessContract.SubCategoryEntry.TABLE_NAME, null, subCatValues);
+//
+//        // Verify we got a row back
+//        assertTrue("Error: Failure to insert IT Services Sub_Category value", subCatRowId != -1);
+//
+//        return subCatRowId;
+//    }
 
     /*
         The functions we provide inside of TestProvider use this utility class to test
