@@ -36,12 +36,9 @@ public class Government extends Fragment {
 
         // create the data for the listView
         String[] govtArray = {
-                "Embassies", "Ministry of Agriculture",
-                "Ministry of Education", "Ministry of Environment",
-                "Ministry of Housing", "Ministry of Information",
-                "Ministry of Justice", "Ministry of Medical Services",
-                "Ministry of Transport", "Ministry of Tourism",
-                "Ministry of State For National Heritage And Culture"
+                "Embassies & Consulates", "Government Ministries",
+                "NGOs", "Government Services", "Voluntary Organizations",
+                "Groups & Charities"
         };
 
         List<String> govt = new ArrayList<>(Arrays.asList(govtArray));

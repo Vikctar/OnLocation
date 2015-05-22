@@ -61,10 +61,11 @@ public class Shopping extends Fragment {
 
         // create the data for the listView
         String[] shoppingArray = {
-                "Book Stores", "Clothing", "Electronics",
+                "Book Stores", "Clothing", "Cigars & Tobacco", "Electronics",
                 "Gifts/Accessories", "Home and Garden",
                 "Kids Store", "Phone/Tablets",
-                "Toys", "Jewellery"
+                "Toys", "Jewellery", "Food Stuff", "Malls", "Beauty Shops",
+                "Furniture", "Fashion Boutiques"
         };
 
         List<String> shopper = new ArrayList<>(Arrays.asList(shoppingArray));

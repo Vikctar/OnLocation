@@ -40,7 +40,8 @@ public class ComputersAndInternet extends Fragment {
                 "Computer Games", "Computer Training",
                 "Data Recovery and Backup", "Domain Name Registration",
                 "Networking", "Internet Service Providers", "Web Designs",
-                "Software Applications", "Web Hosting Services"
+                "Software Applications", "Web Hosting Services",
+                "Internet Security", "Web Services"
         };
 
         List<String> computers = new ArrayList<>(Arrays.asList(computersArray));

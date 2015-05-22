@@ -36,8 +36,8 @@ public class Health extends Fragment {
 
         // Create the data for the listView
         String[] healthArray = {
-                "Hospitals", "Chemists", "Herbal Clinics",
-                "Dentists", "Pharmaceutical", "Optometrists"
+                "Hospitals", "Chemists", "Emergencies", "Herbal Clinics", "Home Healthcare",
+                "Dentists", "Medical Equipment", "Pharmaceutical", "Optometrists"
         };
 
         List<String> health = new ArrayList<>(Arrays.asList(healthArray));

@@ -63,7 +63,9 @@ public class Entertainment extends Fragment {
                 "Arts and Crafts", "Fashion", "Fine Arts",
                 "Gaming", "Theater and Musicals", "Parties and Events",
                 "Performing Arts", "Bars", "Photography", "Media Production",
-                "Casino", "Movie", "Museums", "Nightclubs"
+                "Casino", "Movie", "Nightclubs", "Lifestyle Management",
+                "Pets", "Weddings", "Night Clubs", "Books & Magazines",
+                "Cinemas", "Lifestyle Management"
         };
 
         List<String> entertainment = new ArrayList<>(Arrays.asList(entertainmentArray));

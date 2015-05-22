@@ -37,10 +37,10 @@ public class Industry extends Fragment {
 
         // create the dat for the ListView
         String[] industryArray = {
-                "Energy Suppliers", "Farming",
+                "Energy Suppliers", "Cleaning & Hygene", "Farming",
                 "General Engineering", "Industrial Automation", "Industrial Equipment",
                 "Industrial Premises", "Industrial Services", "Industrial Supplies",
-                "Manufacturing", "Product Development"
+                "Manufacturing", "Product Development", "Warehousing & Storage"
         };
 
         List<String> industry = new ArrayList<>(Arrays.asList(industryArray));

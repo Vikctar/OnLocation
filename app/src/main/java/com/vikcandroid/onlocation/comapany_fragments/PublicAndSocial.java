@@ -38,7 +38,8 @@ public class PublicAndSocial extends Fragment {
         String[] publicArray = {
                 "Child Care", "Education",
                 "Places of Worship", "Parks",
-                "Social Halls", "Children Homes", "Funeral Directors"
+                "Social Halls", "Children Homes", "Funeral Directors",
+                "Social Work Services"
         };
 
         List<String> publicSocial = new ArrayList<>(Arrays.asList(publicArray));

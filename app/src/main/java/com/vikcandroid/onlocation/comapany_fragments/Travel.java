@@ -38,11 +38,12 @@ public class Travel extends Fragment {
 
         // create the data for the listView
         String[] travelArray = {
-                "Flights", "Parking Bays",
+                "Flights & Air Freight", "Parking Bays",
                 "Taxis", "Matatus",
                 "Travel Agents", "Bus Charters",
                 "Petrol Stations", "Train", "Transportation/Logistics",
-                "Couriers"
+                "Couriers", "Shipping Agencies", "Liquid Transport",
+                "Tours & Travel"
         };
 
         List<String> travel = new ArrayList<>(Arrays.asList(travelArray));

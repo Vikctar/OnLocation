@@ -36,10 +36,10 @@ public class Finance extends Fragment {
 
         // Create the data for the listview
         String[] financeArray = {
-                "Accounting", "Banking", "Business Finance",
+                "Accounting & Fiscal", "Banking", "Business Finance",
                 "Insurance", "Legal", "Personal Finance",
                 "Associations", "Stock Brokers", "Solicitors & Lawyers",
-                "Tax Agents", "Loans", "General Insurance"
+                "Tax Agents", "Loans", "General Insurance",
         };
 
         List<String> financier = new ArrayList<>(Arrays.asList(financeArray));

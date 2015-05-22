@@ -37,8 +37,11 @@ public class Accommodation extends Fragment {
 
         // create the dat for the ListView
         String[] accommodationArray = {
-                "Hotels", "Lodgings", "Motels",
-                "Inns", "Apartments"
+                "Apartments", "Bed & Breakfast",
+                "Camping & Caravan", "Cottages",
+                "Guest Houses", "Hostels",
+                "Hotels & Motels", "Lodgings",
+                "Holiday Homes", "Self Catering Accommodation"
         };
 
         List<String> accommodation = new ArrayList<>(Arrays.asList(accommodationArray));

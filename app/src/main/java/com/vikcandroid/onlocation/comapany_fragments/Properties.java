@@ -39,7 +39,8 @@ public class Properties extends Fragment {
         String[] propertiesArray = {
                 "Auctions", "Estate Agents",
                 "Property Consultants", "Property Maintenance",
-                "Cube Movers", "Ministry of Lands", "Ministry of Housing"
+                "Cube Movers", "Ministry of Lands", "Ministry of Housing",
+                "Security", "Home Improvement"
         };
 
         List<String> property = new ArrayList<>(Arrays.asList(propertiesArray));

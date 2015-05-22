@@ -63,7 +63,10 @@ public class BusinessServices extends Fragment {
                 "Human Resources", "Import and Export Agents",
                 "Management Consultants", "Marketing",
                 "Offices and Office Space", "Public Relations",
-                "Retail Services", "Sales Management", "Staff Training"
+                "Retail Services", "Sales Management", "Staff Training",
+                "Gas & Energy", "Business Travel Agencies", "Accounting & Fiscality",
+                "Secretarial Services", "Trading", "Storage & Warehousing",
+                "Environmental Services", "Business Transport"
 
         };
 

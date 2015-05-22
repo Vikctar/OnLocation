@@ -39,7 +39,10 @@ public class Automotive extends Fragment {
                 "Car Dealerships", "Car Parts and Accessories",
                 "Car Repair", "New & Used Cars", "Car Rentals",
                 "Motor Mechanics", "Tyres", "Auto Electricians",
-                "Auto Air Cons", "Motorbikes", "Diving Schools"
+                "Auto Air Cons", "Motorbikes", "Diving Schools",
+                "Car Wash", "Vehicle Services", "Emergency & Breakdown",
+                "Clearing & Forwarding", "Fuel Dealers", "Vehicle Maintenance",
+                "Car Customization"
         };
 
         List<String> auto = new ArrayList<>(Arrays.asList(autoArray));

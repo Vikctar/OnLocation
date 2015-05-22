@@ -41,7 +41,10 @@ public class Food extends Fragment {
 
         // create the data for the listView
         String[] foodArray = {
-                "Drinks", "Eat out",
+                "Bakery", "Butcheries",
+                "Bistros & Braisseries",
+                "Cafes", "Catering Services", "Coffee houses",
+                "Drinks", "Eat out", "Outdoor", "Food Manufacturers",
                 "Pubs and Clubs", "Restaurants", "Food Delivery"
         };
 

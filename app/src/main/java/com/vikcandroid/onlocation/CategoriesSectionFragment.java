@@ -79,8 +79,8 @@ public class CategoriesSectionFragment extends Fragment {
 
     private class CatAdapter extends BaseAdapter {
         String[] icon_name = {
-                "Business Services",
-                "Entertainment",
+                "Business",
+                "Lifestyle",
                 "Shopping",
                 "Food/Drink",
                 "Buildings",
@@ -89,16 +89,16 @@ public class CategoriesSectionFragment extends Fragment {
                 "Legal & Finance",
                 "Government",
                 "Properties",
-                "Transport/Travel",
+                "Transport",
                 "Automotive",
                 "Industry",
                 "Public Service",
                 "Personal Service",
                 "Sports",
                 "Computers",
-                "Construction",
+                "Contacts",
                 "Deals",
-                "Contacts"
+                "Construction"
         };
         private List<CatAdapter.Item> items = new ArrayList<>();
         private LayoutInflater mInflater;
@@ -165,7 +165,7 @@ public class CategoriesSectionFragment extends Fragment {
 
             icon.setImageResource(item.drawableId);
             catText = (TextView) view.findViewById(R.id.cat_text);
-            catText.setTextSize(2, 12.0F);
+            catText.setTextSize(2, 14.0F);
             catText.setText(icon_name[position]);
 
             return view;

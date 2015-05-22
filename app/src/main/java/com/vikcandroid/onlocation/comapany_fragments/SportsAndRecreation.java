@@ -40,7 +40,9 @@ public class SportsAndRecreation extends Fragment {
                  "Fitness And Gyms", "Trophies",
                 "Stadiums and Gymnasiums", "Skating Parks",
                 "Swimming Pools", "Sports Equipments",
-                "Sports Complex",
+                "Sports Complex", "Camping & Outdoors",
+                "Cruises", "Sports Clubs", "Travel & Tours",
+                "Museums", "Tourist Information"
         };
 
         List<String> sports = new ArrayList<>(Arrays.asList(sportsArray));

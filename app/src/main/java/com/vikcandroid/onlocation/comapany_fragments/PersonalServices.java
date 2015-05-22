@@ -39,7 +39,7 @@ public class PersonalServices extends Fragment {
         String[] personalServicesArray = {
                 "Beauty Salons", "Dance Tuition",
                 "Massage", "Physiotherapists", "Podiatrists",
-                "Spas"
+                "Spas", "Tailoring & Repairs", "Laundry", "Shoe Repairs"
         };
 
         List<String> personalServices = new ArrayList<>(Arrays.asList(personalServicesArray));
