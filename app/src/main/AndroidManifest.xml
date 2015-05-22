@@ -46,9 +46,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.vikcandroid.onlocation.MainActivity" />
         </activity>
-        <activity
-            android:name=".WebView"
+         <activity
+            android:name=".ViewWeb"
             android:label="@string/title_activity_web_view" >
+        </activity>
+
+        <activity
+            android:name=".AddBusiness"
+            android:label="@string/title_activity_add_business" >
         </activity>
     </application>
 

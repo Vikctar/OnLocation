@@ -44,4 +44,7 @@
     <string name="nearby_text">Nearby</string>
     <string name="about_text">About</string>
     <string name="title_activity_web_view">WebView</string>
+    <string name="title_activity_add_business">AddBusiness</string>
+
+    <string name="category_prompt">Pick a category</string>
 </resources>

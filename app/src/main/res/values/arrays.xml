@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_arrays">
+        <item>Business Services</item>
+        <item>Entertainment and Lifestyle</item>
+        <item>Shopping</item>
+        <item>Food and Drink</item>
+        <item>Buildings</item>
+        <item>Accommodation</item>
+        <item>Health</item>
+        <item>Financial and Legal Services</item>
+        <item>Government</item>
+        <item>Properties</item>
+        <item>Transport and Travel</item>
+        <item>Automotive</item>
+        <item>Industry</item>
+        <item>Public Services</item>
+        <item>Personal Services</item>
+        <item>Sports and Recreation</item>
+        <item>Computers and Internet</item>
+        <item>Construction</item>
+    </string-array>
+</resources>

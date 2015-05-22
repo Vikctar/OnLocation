@@ -1,12 +1,12 @@
 package com.vikcandroid.onlocation;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class WebView extends ActionBarActivity {
+public class ViewWeb extends ActionBarActivity {
 
     int keyId;
 

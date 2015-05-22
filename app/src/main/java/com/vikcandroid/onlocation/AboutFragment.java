@@ -30,7 +30,7 @@ public class AboutFragment extends Fragment {
         trPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent privacyIntent = new Intent(getActivity(), WebView.class);
+                Intent privacyIntent = new Intent(getActivity(), ViewWeb.class);
                 privacyIntent.putExtra("KEY", 1);
                 startActivity(privacyIntent);
             }
@@ -39,7 +39,7 @@ public class AboutFragment extends Fragment {
         trTerms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent termsIntent = new Intent(getActivity(), WebView.class);
+                Intent termsIntent = new Intent(getActivity(), ViewWeb.class);
                 termsIntent.putExtra("KEY", 2);
                 startActivity(termsIntent);
             }
@@ -66,8 +66,8 @@ public class AboutFragment extends Fragment {
         trAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent addIntent = new Intent(getActivity(), AddBusiness.class);
-                //startActivity(addIntent);
+                Intent addIntent = new Intent(getActivity(), AddBusiness.class);
+                startActivity(addIntent);
             }
         });
 

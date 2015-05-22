@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,32 +78,54 @@ public class CategoriesSectionFragment extends Fragment {
     }
 
     private class CatAdapter extends BaseAdapter {
+        String[] icon_name = {
+                "Business Services",
+                "Entertainment",
+                "Shopping",
+                "Food/Drink",
+                "Buildings",
+                "Accommodation",
+                "Health",
+                "Legal & Finance",
+                "Government",
+                "Properties",
+                "Transport/Travel",
+                "Automotive",
+                "Industry",
+                "Public Service",
+                "Personal Service",
+                "Sports",
+                "Computers",
+                "Construction",
+                "Deals",
+                "Contacts"
+        };
         private List<CatAdapter.Item> items = new ArrayList<>();
         private LayoutInflater mInflater;
 
         public CatAdapter(Context context) {
             mInflater = LayoutInflater.from(context);
 
-            items.add(new CatAdapter.Item(R.drawable.icon_business_services));
-            items.add(new CatAdapter.Item(R.drawable.icon_entertainment));
-            items.add(new CatAdapter.Item(R.drawable.icon_shopping));
-            items.add(new CatAdapter.Item(R.drawable.icon_food));
-            items.add(new CatAdapter.Item(R.drawable.buildings));
-            items.add(new CatAdapter.Item(R.drawable.icon_accomodation));
-            items.add(new CatAdapter.Item(R.drawable.icon_healthcare));
-            items.add(new CatAdapter.Item(R.drawable.icon_financial));
-            items.add(new CatAdapter.Item(R.drawable.icon_government));
-            items.add(new CatAdapter.Item(R.drawable.icon_properties));
-            items.add(new CatAdapter.Item(R.drawable.icon_transport));
-            items.add(new CatAdapter.Item(R.drawable.icon_automotive));
-            items.add(new CatAdapter.Item(R.drawable.icon_industry));
-            items.add(new CatAdapter.Item(R.drawable.icon_public));
-            items.add(new CatAdapter.Item(R.drawable.icon_personal));
-            items.add(new CatAdapter.Item(R.drawable.icon_sports));
-            items.add(new CatAdapter.Item(R.drawable.icon_computer));
-            items.add(new CatAdapter.Item(R.drawable.icon_hot_deals));
-            items.add(new CatAdapter.Item(R.drawable.icon_business_contacts));
-            items.add(new CatAdapter.Item(R.drawable.icon_building_construction));
+            items.add(new CatAdapter.Item(R.drawable.ic_business_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_entertainment_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_shopping_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_food_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_buildings_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_accommodation_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_healthcare_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_finance_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_government_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_properties_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_transport_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_automotive_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_industry_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_public_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_personal_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_sports_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_computer_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_deals_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_business_contacts_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_construction_2));
 
         }
 
@@ -130,6 +152,7 @@ public class CategoriesSectionFragment extends Fragment {
             View view = convertView;
 
             ImageView icon;
+            TextView catText;
 
             if (convertView == null) {
                 view = mInflater.inflate(R.layout.grid_view_item, parent, false);
@@ -141,6 +164,9 @@ public class CategoriesSectionFragment extends Fragment {
             CatAdapter.Item item = (CatAdapter.Item)getItem(position);
 
             icon.setImageResource(item.drawableId);
+            catText = (TextView) view.findViewById(R.id.cat_text);
+            catText.setTextSize(2, 12.0F);
+            catText.setText(icon_name[position]);
 
             return view;
         }
