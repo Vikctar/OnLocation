@@ -1,23 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="category_arrays">
-        <item>Business Services</item>
-        <item>Entertainment and Lifestyle</item>
-        <item>Shopping</item>
-        <item>Food and Drink</item>
-        <item>Buildings</item>
         <item>Accommodation</item>
-        <item>Health</item>
-        <item>Financial and Legal Services</item>
-        <item>Government</item>
-        <item>Properties</item>
-        <item>Transport and Travel</item>
         <item>Automotive</item>
-        <item>Industry</item>
-        <item>Public Services</item>
-        <item>Personal Services</item>
-        <item>Sports and Recreation</item>
+        <item>Buildings</item>
+        <item>Business Services</item>
         <item>Computers and Internet</item>
         <item>Construction</item>
+        <item>Entertainment and Lifestyle</item>
+        <item>Financial and Legal Services</item>
+        <item>Food and Drink</item>
+        <item>Government</item>
+        <item>Health</item>
+        <item>Industry</item>
+        <item>Personal Services</item>
+        <item>Properties</item>
+        <item>Public Services</item>
+        <item>Shopping</item>
+        <item>Sports and Recreation</item>
+        <item>Transport and Travel</item>
+    </string-array>
+
+    <!-- Subcategories -->
+    <string-array name="subcategory_arrays">
+        <!-- A -->
+        <item>Accounting and Fiscal</item>
+        <item>Advertising</item>
+        <item>Apartments</item>
+        <item>Arts and Crafts</item>
+        <item>Auctions</item>
+        <item>Auto Air Cons</item>
+        <item>Auto Electricians</item>
+
+        <!-- B -->
+        <item>Bakery</item>
+        <item>Banking</item>
+        <item>Beauty Shops</item>
+        <item>Beauty Salons</item>
+        <item>Bed and Breakfast</item>
+        <item>Bistros and Braisseries</item>
+        <item>Book Stores</item>
+        <item>Books and Magazines</item>
+        <item>Building Maintenance</item>
+        <item>Bus Charters</item>
+        <item>Business Communication</item>
+        <item>Business Finance</item>
+        <item>Business Transport</item>
+        <item>Business Travel Agencies</item>
+        <item>Butcheries</item>
+
+        <!-- C -->
+        <item>Cafes</item>
+        <item>Camping and Caravans</item>
+        <item>Camping and Outdoors</item>
+        <item>Car Customization</item>
+        <item>Car Dealerships</item>
+        <item>Car Parts and Accessories</item>
+        <item>Car Rentals</item>
+        <item>Car Repair</item>
+        <item>Car Wash</item>
+        <item>Casino</item>
+        <item>Catering Services</item>
+        <item>Chemists</item>
+        <item>Child Care</item>
+        <item>Children Homes</item>
+        <item>Cigars and Tobacco</item>
+        <item>Cinemas</item>
+        <item>Cleaning and Hygiene</item>
+        <item>Clearing And Forwarding</item>
+        <item>Clothing</item>
+        <item>Coffee Houses</item>
+        <item>Computer Games</item>
+        <item>Computer Repairs</item>
+        <item>Computer Training</item>
+        <item>Computers</item>
+        <item>Construction Consultants</item>
+        <item>Construction Equipment</item>
+        <item>Construction Material</item>
+        <item>Construction Workers</item>
+        <item>Cottages</item>
+        <item>Couriers</item>
+        <item>Cruises</item>
+        <item>Cube Movers</item>
+
+        <!-- D -->
+        <item>Dance Tuition</item>
+        <item>Data Recovery and Backup</item>
+        <item>Dentists</item>
+        <item>Domain Name Registration</item>
+        <item>Drinks</item>
+        <item>Driving Schools</item>
+
+        <!-- E -->
+        <item>Eat Out</item>
+        <item>Education</item>
+        <item>Electronics</item>
+        <item>Embassies and Consulates</item>
+        <item>Emergencies</item>
+        <item>Emergency and BreakDowns</item>
+        <item>Energy Suppliers</item>
+        <item>Estate Agents</item>
+        <item>Events and Conferences</item>
+
+        <!-- F -->
+        <item>Farming</item>
+        <item>Fashion</item>
+        <item>Fashion Boutiques</item>
+        <item>Fine Arts</item>
+        <item>Fittnes and Gyms</item>
+        <item>Flights and Air Freight</item>
+        <item>Food Delivery</item>
+        <item>Food Manufacturers</item>
+        <item>Food Stuff</item>
+        <item>Fuel Dealers</item>
+        <item>Funeral Directors</item>
+        <item>Furniture</item>
+
+        <!-- G -->
+        <item>Gaming</item>
+        <item>Gas and Energy</item>
+        <item>General Engineering</item>
+        <item>General Insurance</item>
+        <item>General Office Services</item>
+        <item>Gifts and Accessories</item>
+        <item>Groups and Charities</item>
+        <item>Guest Houses</item>
+
+        <!-- H -->
+        <item>Herbal Clinics</item>
+        <item>Holiday Homes</item>
+        <item>Home and Garden</item>
+        <item>Home Health Care</item>
+        <item>Home Improvement</item>
+        <item>Hospitals</item>
+        <item>Hostels</item>
+        <item>Hotels and Motels</item>
+        <item>Housing Ministry</item>
+        <item>Human Resources</item>
+
+        <!-- I -->
+        <item>Import and Export Agents</item>
+        <item>Industrial Automation</item>
+        <item>Industrial Equipment</item>
+        <item>Industrial Premises</item>
+        <item>Industrial Services</item>
+        <item>Industrial Supplies</item>
+        <item>Internet Security</item>
+        <item>Internet Service Providers</item>
+        <item>Insurance</item>
+
+        <!-- J -->
+        <item>Jewellery</item>
+
+        <!-- K -->
+        <item>Kids Store</item>
+
+        <!-- L -->
+        <item>Lands Ministry</item>
+        <item>Laundry</item>
+        <item>Legal</item>
+        <item>Lifestyle Management</item>
+        <item>Liquid Transport</item>
+        <item>Loans</item>
+        <item>Lodgings</item>
+
+        <!-- M -->
+        <item>Malls</item>
+        <item>Management Consultants</item>
+        <item>Manufacturing</item>
+        <item>Marketing</item>
+        <item>Massage Parlours</item>
+        <item>Matatus</item>
+        <item>Media Production</item>
+        <item>Medical Equipment</item>
+        <item>Motor Mechanics</item>
+        <item>Motorbikes</item>
+        <item>Movie</item>
+        <item>Museums</item>
+
+
+        <!-- N -->
+        <item>Networking</item>
+        <item>New and Used Cars</item>
+        <item>NGOs</item>
+        <item>NightClubs</item>
+
+        <!-- O -->
+        <item>Offices and Office Space</item>
+        <item>Optometrists</item>
+        <item>Outdoor</item>
+
+        <!-- P -->
+        <item>Parking Bays</item>
+        <item>Parks</item>
+        <item>Parties and Events</item>
+        <item>Performing Arts</item>
+        <item>Personal Finance</item>
+        <item>Petrol Stations</item>
+        <item>Pets</item>
+        <item>Pharmaceuticals</item>
+        <item>Pharmacy</item>
+        <item>Phone/Tablets</item>
+        <item>Photography</item>
+        <item>Physiotherapists</item>
+        <item>Places of Worship</item>
+        <item>Podiatrists</item>
+        <item>Product Development</item>
+        <item>Property Consultants</item>
+        <item>Property Maintenance</item>
+        <item>Public Relations</item>
+        <item>Pubs and Clubs</item>
+
+        <!-- Q -->
+
+        <!-- R -->
+        <item>Restaurants</item>
+        <item>Retail Services</item>
+
+        <!-- S -->
+        <item>Sales Management</item>
+        <item>Secretarial Services</item>
+        <item>Security</item>
+        <item>Self Catering Accommodation</item>
+        <item>Shipping Agencies</item>
+        <item>Shoe Repairs</item>
+        <item>Skating Parks</item>
+        <item>Social Halls</item>
+        <item>Social Work Services</item>
+        <item>Software Applications</item>
+        <item>Solicitors and Lawyers</item>
+        <item>Spas</item>
+        <item>Sports Clubs</item>
+        <item>Sports Complex</item>
+        <item>Sports Equipments</item>
+        <item>Stadiums and Gymnasiums</item>
+        <item>Staff Training</item>
+        <item>Stock Brokers</item>
+        <item>Storage and Warehousing</item>
+        <item>Swimming Pools</item>
+
+        <!-- T -->
+        <item>Tailoring and Repairs</item>
+        <item>Tax Agents</item>
+        <item>Theater and Musicals</item>
+        <item>Tours and Travel</item>
+        <item>Tourist Information</item>
+        <item>Toys</item>
+        <item>Trains</item>
+        <item>Travel Agents</item>
+        <item>Travel and Tours</item>
+        <item>Taxis</item>
+        <item>Trophies</item>
+        <item>Tyres</item>
+
+        <!-- U -->
+
+        <!-- V -->
+        <item>Vehicle Maintenance</item>
+        <item>Vehicle Services</item>
+        <item>Voluntary Organizations</item>
+
+        <!-- W -->
+        <item>Warehousing and Storage</item>
+        <item>Web Design</item>
+        <item>Web Hosting</item>
+        <item>Web Services</item>
+        <item>Weddings</item>
+        <!-- X -->
+
+        <!-- Y -->
+
+        <!-- Z -->
     </string-array>
 </resources>

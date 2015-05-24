@@ -20,6 +20,7 @@ public class AddBusiness extends ActionBarActivity {
     EditText editEmail;
 
     Spinner spinnerCategory;
+    Spinner spinnerSubCat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class AddBusiness extends ActionBarActivity {
         editEmail = (EditText) findViewById(R.id.edit_email);
         editRemarks = (EditText) findViewById(R.id.add_remark);
         spinnerCategory = (Spinner) findViewById(R.id.spinner_cat);
+        spinnerSubCat = (Spinner) findViewById(R.id.spinner_sub_cat);
      }
 
 

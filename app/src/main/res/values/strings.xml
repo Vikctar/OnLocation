@@ -47,4 +47,5 @@
     <string name="title_activity_add_business">AddBusiness</string>
 
     <string name="category_prompt">Pick a category</string>
+    <string name="subcategory_prompt">Pick a subcategory</string>
 </resources>
