@@ -4,24 +4,26 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class ViewWeb extends ActionBarActivity {
 
-    int keyId;
+    String  keyId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        keyId = getIntent().getIntExtra("KEY", 100);
+       keyId = getIntent().getStringExtra("KEY");
+        Toast.makeText(getApplicationContext(),"hhh"+keyId,Toast.LENGTH_LONG).show();
         android.webkit.WebView webView = (android.webkit.WebView)findViewById(R.id.web_view);
 
-        if (keyId == 1) {
-            webView.loadUrl("file:///android_asset/Privacy.html");
+        if (keyId == "1") {
+            webView.loadUrl("file:///android_asset/privacy.html");
         }
-        else if (keyId == 2)
-            webView.loadUrl("file:///android_asset/Terms.html");
+        else if (keyId == "2")
+            webView.loadUrl("file:///android_asset/terms.html");
     }
 
 

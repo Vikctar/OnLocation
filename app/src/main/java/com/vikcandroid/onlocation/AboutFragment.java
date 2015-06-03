@@ -31,7 +31,7 @@ public class AboutFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent privacyIntent = new Intent(getActivity(), ViewWeb.class);
-                privacyIntent.putExtra("KEY", 1);
+                privacyIntent.putExtra("KEY", "1");
                 startActivity(privacyIntent);
             }
         });

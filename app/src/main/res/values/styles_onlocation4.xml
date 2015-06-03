@@ -35,7 +35,7 @@
 
     </style>
 
-    <style name="ActionBar.Solid.Onlocation4" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="ActionBar.Solid.Onlocation4" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
         <item name="background">@drawable/ab_solid_onlocation4</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_onlocation4</item>
         <item name="backgroundSplit">@drawable/ab_bottom_solid_onlocation4</item>
