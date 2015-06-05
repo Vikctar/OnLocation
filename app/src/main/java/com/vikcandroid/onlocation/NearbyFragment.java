@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -157,6 +159,12 @@ public class NearbyFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+//            pDialog = new ProgressDialog(getActivity());
+//            pDialog.setMessage(Html.fromHtml("<b>Search</b><br/>Loading Nearby places..."));
+//            pDialog.setIndeterminate(false);
+//            pDialog.setCancelable(false);
+//            pDialog.getWindow().setGravity(Gravity.BOTTOM);
+//            pDialog.show();
         }
 
         /**
@@ -166,6 +174,33 @@ public class NearbyFragment extends Fragment {
             // creating Places class object
             googlePlaces = new GooglePlaces();
             //nearPlaces = SplashScreenActivity.nearPlaces;
+//
+//            try {
+//                // Separate your place types by PIPE symbol "|"
+//                // If you want all types places make it as null
+//                // Check list of types supported by google
+//                //
+//                String types = "cafe|restaurant|airport|atm|aquarium|bakery|bank|bar|beauty_salon|book_store|bus_station|" +
+//                        "cafe|car_wash|car_repair|car_rental|casino|cemetery|church|dentist|courthouse|department_store|doctor" +
+//                        "|electronics_store|embassy|finance|fire_station|florist|food|furniture_store|gas_station|general_contractor|" +
+//                        "grocery_or_supermarket|gym|hair_care|hardware_store|health|hindu_temple|home_goods_store|hospital|insurance_agency|" +
+//                        "jewelry_store|laundry|lawyer|library|liquor_store|local_government_office|lodging|mosque|movie_theater|museum|night_club|" +
+//                        "pharmacy|physiotherapist|place_of_worship|" +
+//                        "police|post_office|restaurant|school|shopping_mall|spa|stadium|store|taxi_stand|train_station|travel_agency|university|zoo"; // Listing places only restaurants
+//
+//
+////                String keyword = "cafe|restaurant|airport|atm|bakery|bank|bar|beauty_salon|book_store|bus_station|" +
+////                        "car_wash|car_repair|car_rental|casino|cemetery|church|dentist|doctor|university";// Listing places with keyword pizza
+////                // Radius in meters - increase this value if you don't find any places
+////                //double radius = 1000; // 1000 meters
+//                String rankby = "distance";
+//
+//                // get nearest places ranked by distance
+//                nearPlaces = googlePlaces.search(gps.getLatitude(),
+//                        gps.getLongitude(), types,  rankby);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
             return null;
         }
 
@@ -177,7 +212,7 @@ public class NearbyFragment extends Fragment {
          * **/
         protected void onPostExecute(String file_url) {
             // dismiss the dialog after getting all products
-            //pDialog.dismiss();
+//            pDialog.dismiss();
             // updating UI from Background Thread
             getActivity().runOnUiThread(new Runnable() {
                 public void run() {

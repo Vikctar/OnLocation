@@ -90,6 +90,11 @@ public class Splash extends Activity {
                 // This method will be executed once the timer is over
                 // calling background Async task to load Google Places
                 new LoadPlaces().execute();
+//                Intent i = new Intent(Splash.this, MainActivity.class);
+//                startActivity(i);
+//
+//                // close this activity
+//                finish();
             }
         }, SPLASH_TIME_OUT);
     }
