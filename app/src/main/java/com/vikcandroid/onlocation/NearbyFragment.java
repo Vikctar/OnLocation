@@ -52,6 +52,8 @@ public class NearbyFragment extends Fragment {
 
     ListView lv;
 
+    int baseId;
+
     // ListItems data
     ArrayList<HashMap<String, String>> placesListItems = new ArrayList<HashMap<String, String>>();
 
@@ -62,6 +64,7 @@ public class NearbyFragment extends Fragment {
     public static String KEY_ADDRESS = "address"; // address of the place
     public static String KEY_CATEGORY = "category"; // category of the place
     public static String KEY_VICINITY = "vicinity"; // Place area name
+    public static String KEY_CATA = "other"; // Place area name
 
     // define an ArrayAdapter that takes Strings
     public ArrayAdapter<String> nearbyAdapter;
@@ -222,6 +225,7 @@ public class NearbyFragment extends Fragment {
                     // Get json response status
                     //System.out.println("nearplaces status " + nearPlaces.status);
                     String status = nearPlaces.status;
+                    String s1 = "";
 
                     // Check for all possible status
                     if (status.equals("OK")) {
@@ -231,12 +235,97 @@ public class NearbyFragment extends Fragment {
                             for (Place p : nearPlaces.results) {
                                 HashMap<String, String> map = new HashMap<String, String>();
 
+//                                if(!p.equals("store") && !p.equals("grocery_or_supermarket")) {
+//                                    if(!p.equals("restaurant") && !p.equals("food"))
+//                                    {
+//                                        if(!p.equals("hospital") && !p.equals("health") && !p.equals("dentist") && !p.equals("doctor"))
+//                                        {
+//                                            if(!p.equals("bank") && !p.equals("atm") && !p.equals("finance"))
+//                                            {
+//                                                if(p.equals("lodging"))
+//                                                {
+//                                                    s1 = Integer.toString(R.drawable.icon_accomodation_2);
+//                                                    KEY_CATA = "Accommodation";
+//                                                    continue;
+//                                                }
+//                                                if(!p.equals("airport") && !p.equals("bus_station") && !p.equals("train_station") && !p.equals("travel_agency"))
+//                                                {
+//                                                    if(!p.equals("book_store") && !p.equals("bakery") && !p.equals("bakery") && !p.equals("hardware_store"))
+//                                                    {
+//                                                        if(!p.equals("hindu_temple") && !p.equals("mosque") && !p.equals("place_of_worship"))
+//                                                        {
+//                                                            if(!p.equals("library") && !p.equals("school"))
+//                                                            {
+//                                                                if(!p.equals("electronics_store") && !p.equals("electrician"))
+//                                                                {
+//                                                                    if(p.equals("beauty_salon"))
+//                                                                    {
+//                                                                        s1 = Integer.toString(R.drawable.ic_personal_2);
+//                                                                        KEY_CATA = "Personal Services";
+//                                                                    }
+//                                                                } else
+//                                                                {
+//                                                                    s1 = Integer.toString(R.drawable.ic_industry_2);
+//                                                                    KEY_CATA = "Industry";
+//                                                                }
+//                                                            } else
+//                                                            {
+//                                                                s1 = Integer.toString(R.drawable.ic_public_2);
+//                                                                KEY_CATA = "Public Services";
+//                                                            }
+//                                                        } else
+//                                                        {
+//                                                            s1 = Integer.toString(R.drawable.ic_public_2);
+//                                                            KEY_CATA = "Public Services";
+//                                                        }
+//                                                    } else
+//                                                    {
+//                                                        s1 = Integer.toString(R.drawable.ic_shopping_2);
+//                                                        KEY_CATA = "Shopping";
+//                                                    }
+//                                                } else
+//                                                {
+//                                                    s1 = Integer.toString(R.drawable.ic_transport_2);
+//                                                    KEY_CATA = "Travel";
+//                                                }
+//                                            } else
+//                                            {
+//                                                s1 = Integer.toString(R.drawable.ic_finance_2);
+//                                                KEY_CATA = "Finance";
+//                                            }
+//                                        } else
+//                                        {
+//                                            s1 = Integer.toString(R.drawable.ic_healthcare_2);
+//                                            KEY_CATA = "Health";
+//                                        }
+//                                    } else
+//                                    {
+//                                        s1 = Integer.toString(R.drawable.ic_food_2);
+//                                        KEY_CATA = "Food and Drink";
+//                                    }
+//                                } else
+//                                {
+//                                    s1 = Integer.toString(R.drawable.ic_shopping_2);
+//                                    KEY_CATA = "Shopping";
+//                                }
+
                                 // Place reference won't display in listview - it will be hidden
                                 // Place reference is used to get "place full details"
                                 map.put(KEY_REFERENCE, p.reference);
 
                                 // Place name
                                 map.put(KEY_NAME, p.name);
+//                                map.put(KEY_CATEGORY, s1);
+//
+//                                map.put("KEY_C", KEY_CATA);
+
+                                String s2 = p.name;
+                                map.put(KEY_NAME, s2.replace("'", ""));
+                                if(baseId == 0)
+                                    map.put(KEY_ADDRESS, p.vicinity);
+                                else
+                                if(baseId == 1)
+                                    map.put(KEY_ADDRESS, p.formatted_address);
 
                                 // place vicinity
                                 //map.put(KEY_VICINITY, p.vicinity);
@@ -248,8 +337,8 @@ public class NearbyFragment extends Fragment {
                             // list adapter
                             ListAdapter adapter = new SimpleAdapter(getActivity(), placesListItems,
                                     R.layout.nearby_list_item,
-                                    new String[]{KEY_REFERENCE, KEY_NAME}, new int[]{
-                                    R.id.reference, R.id.name});
+                                    new String[]{KEY_REFERENCE, KEY_NAME, KEY_ADDRESS}, new int[]{
+                                    R.id.reference, R.id.name, R.id.desc});
 
                             // Adding data into listview
                             lv.setAdapter(adapter);
