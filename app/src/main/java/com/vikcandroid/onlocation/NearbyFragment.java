@@ -1,18 +1,19 @@
 package com.vikcandroid.onlocation;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Html;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -93,7 +94,7 @@ public class NearbyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main_tabs, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_main_tabs, container, false);
 
         // Once the root view for the Fragment has been created, it's time to
         // populate the ListView with some dummy data.
@@ -139,6 +140,14 @@ public class NearbyFragment extends Fragment {
 //            }
 //        });
         lv = (ListView) rootView.findViewById(R.id.listView_nearby);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String reference = ((TextView) rootView.findViewById(R.id.reference)).getText().toString();
+                Intent intent = new Intent(getActivity(), Profile.class).putExtra(KEY_REFERENCE, reference);
+                startActivity(intent);
+            }
+        });
 
         nearPlaces = Splash.nearPlaces;
         gps = Splash.gps;

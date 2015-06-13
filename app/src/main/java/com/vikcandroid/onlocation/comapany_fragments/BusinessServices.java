@@ -96,7 +96,9 @@ public class BusinessServices extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String biz = mBusinessAdapter.getItem(position);
-                Intent intent = new Intent(getActivity(), Profile.class).putExtra(Intent.EXTRA_TEXT, biz);
+
+                Intent intent = new Intent(getActivity(), Profile.class);//.putExtra(Intent.EXTRA_TEXT, biz);
+                intent.putExtra("ID",""+position);
                 startActivity(intent);
             }
         });
