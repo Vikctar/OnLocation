@@ -84,7 +84,7 @@ public class CategoriesSectionFragment extends Fragment {
                 "Shopping",
                 "Food/Drink",
                 "Buildings",
-                "Accommodation",
+                "Accommoda...",
                 "Health",
                 "Legal & Finance",
                 "Government",
@@ -92,12 +92,12 @@ public class CategoriesSectionFragment extends Fragment {
                 "Transport",
                 "Automotive",
                 "Industry",
-                "Public Service",
-                "Personal Service",
+                "Public Serv..",
+                "Personal Serv..",
                 "Sports",
                 "Computers",
-                "Contacts",
-                "Deals",
+//                "Contacts",
+//                "Deals",
                 "Construction"
         };
         private List<CatAdapter.Item> items = new ArrayList<>();
@@ -123,8 +123,8 @@ public class CategoriesSectionFragment extends Fragment {
             items.add(new CatAdapter.Item(R.drawable.ic_personal));
             items.add(new CatAdapter.Item(R.drawable.ic_sports));
             items.add(new CatAdapter.Item(R.drawable.ic_computer));
-            items.add(new CatAdapter.Item(R.drawable.ic_deals));
-            items.add(new CatAdapter.Item(R.drawable.ic_business_contacts));
+//            items.add(new CatAdapter.Item(R.drawable.ic_deals));
+//            items.add(new CatAdapter.Item(R.drawable.ic_business_contacts));
             items.add(new CatAdapter.Item(R.drawable.ic_construction));
 
         }

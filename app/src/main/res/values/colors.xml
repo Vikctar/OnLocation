@@ -29,6 +29,8 @@
     <color name="text_tab_unselected">#ff64c2f4</color>
     <color name="deep_blue">#0056a4</color>
     <color name="place_express_dark">#004d93</color>
+    <color name="place_express_red">#f44336</color>
+    <color name="place_express_dark_red">#d50000</color>
 
 
 </resources>
