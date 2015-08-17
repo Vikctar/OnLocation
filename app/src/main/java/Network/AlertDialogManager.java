@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-import com.vikcandroid.onlocation.R;
+import com.vikcandroid.placexpress.R;
 
 public class AlertDialogManager {
 	/**

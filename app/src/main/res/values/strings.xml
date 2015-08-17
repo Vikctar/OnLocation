@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PlaceXpress</string>
+    <string name="app_name">placexpress</string>
 
 
     <string name="title_section1">Categories</string>
@@ -10,7 +10,7 @@
     <string name="business_services">Business Services</string>
     <string name="entertainment">Entertainment</string>
     <string name="shopping">Shopping</string>
-    <string name="food_drinks">Food</string>
+    <string name="food_drinks">Food And Drinks</string>
     <string name="buildings">Buildings</string>
     <string name="accommodation">Accommodation</string>
     <string name="health">Health</string>
@@ -31,7 +31,7 @@
 
     <string name="action_settings">Settings</string>
     <string name="contact_us">Contact Us</string>
-    <string name="add_biz">Add your Business to ONLocation</string>
+    <string name="add_biz">Add your Business to placeXpress</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_profile">Business Details</string>

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.vikcandroid.onlocation"
+        applicationId "com.vikcandroid.placexpress"
         minSdkVersion 10
         targetSdkVersion 21
         versionCode 1
@@ -19,14 +19,21 @@ android {
     }
 }
 
+repositories{
+    maven {
+        url 'http://dl.bintray.com/amulyakhare/maven'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile fileTree(dir: 'libs', include: '*.jar')
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.android.support:support-v4:21.0.3'
-    compile 'com.google.android.gms:play-services-base:6.5.87'
-    compile 'com.google.android.gms:play-services-maps:6.5.87'
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.android.support:support-v4:22.1.1'
+    compile 'com.google.android.gms:play-services-base:7.3.0'
+    compile 'com.google.android.gms:play-services-maps:7.3.0'
     compile files('libs/gcm.jar')
     //compile files('libs/maps.jar')
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 
 }
