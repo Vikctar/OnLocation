@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Profile extends ActionBarActivity {
+public class Profile extends AppCompatActivity {
 
 
     @Override
@@ -89,7 +89,7 @@ public class Profile extends ActionBarActivity {
         private static final String LOG_TAG = Profile.class.getSimpleName();
 
         // Share Tag
-        private static final String PROFILE_SHARE_HASHTAG = " #ONLocation";
+        private static final String PROFILE_SHARE_HASHTAG = " #placexpress";
 
         private String mNearbyStr;
         ListView business_list;

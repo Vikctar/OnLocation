@@ -151,13 +151,13 @@ public class MainActivity extends ActionBarActivity implements android.support.v
                     // First section of the app
                     return new CategoriesSectionFragment();
 
-                case 1:
-                    // The second tab
-                    return new NearbyFragment();
+//                case 1:
+//                    // The second tab
+//                    return new NearbyFragment();
 
                 default:
                     // The third tab
-                    return new AboutFragment();
+                    return new NearbyFragment(); //AboutFragment(); was originally the third fragment
 
             }
 
@@ -167,8 +167,8 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2;
         }
 
         @Override
@@ -179,8 +179,8 @@ public class MainActivity extends ActionBarActivity implements android.support.v
                     return getString(R.string.title_section1).toUpperCase(l);
                 case 1:
                     return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+//                case 2:
+//                    return getString(R.string.title_section3).toUpperCase(l);
             }
             return null;
         }

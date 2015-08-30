@@ -86,7 +86,7 @@ public class CategoriesSectionFragment extends Fragment {
                 "Buildings",
                 "Accommoda...",
                 "Health",
-                "Legal & Finance",
+                "Finance",
                 "Government",
                 "Properties",
                 "Transport",
@@ -106,26 +106,26 @@ public class CategoriesSectionFragment extends Fragment {
         public CatAdapter(Context context) {
             mInflater = LayoutInflater.from(context);
 
-            items.add(new CatAdapter.Item(R.drawable.ic_business));
-            items.add(new CatAdapter.Item(R.drawable.ic_enterntainment));
-            items.add(new CatAdapter.Item(R.drawable.ic_shpping));
-            items.add(new CatAdapter.Item(R.drawable.ic_food));
-            items.add(new CatAdapter.Item(R.drawable.ic_buildings));
-            items.add(new CatAdapter.Item(R.drawable.ic_accomodation));
-            items.add(new CatAdapter.Item(R.drawable.ic_health));
-            items.add(new CatAdapter.Item(R.drawable.ic_finance));
-            items.add(new CatAdapter.Item(R.drawable.ic_government));
-            items.add(new CatAdapter.Item(R.drawable.ic_properties));
-            items.add(new CatAdapter.Item(R.drawable.ic_transport));
-            items.add(new CatAdapter.Item(R.drawable.ic_automotive));
-            items.add(new CatAdapter.Item(R.drawable.ic_industry));
-            items.add(new CatAdapter.Item(R.drawable.ic_public));
-            items.add(new CatAdapter.Item(R.drawable.ic_personal));
-            items.add(new CatAdapter.Item(R.drawable.ic_sports));
-            items.add(new CatAdapter.Item(R.drawable.ic_computer));
+            items.add(new CatAdapter.Item(R.drawable.ic_business_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_entertainment_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_shopping_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_food_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_buildings_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_accommodation_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_healthcare_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_finance_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_government_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_properties_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_transport_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_automotive_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_industry_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_public_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_personal_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_sports_2));
+            items.add(new CatAdapter.Item(R.drawable.ic_computer_2));
 //            items.add(new CatAdapter.Item(R.drawable.ic_deals));
 //            items.add(new CatAdapter.Item(R.drawable.ic_business_contacts));
-            items.add(new CatAdapter.Item(R.drawable.ic_construction));
+            items.add(new CatAdapter.Item(R.drawable.ic_construction_2));
 
         }
 

@@ -61,9 +61,9 @@
         android:layout_alignParentLeft="true">
 
         <ImageView android:id="@+id/list_image"
-            android:layout_width="50.0dip"
-            android:layout_height="50.0dip"
-            android:src="@drawable/cat_government" />
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@mipmap/ic_launcher" />
     </LinearLayout>
 
     <TextView
