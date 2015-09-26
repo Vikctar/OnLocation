@@ -5,7 +5,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +29,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-public class AddBusiness extends ActionBarActivity {
+@SuppressWarnings("deprecation")
+public class AddBusiness extends AppCompatActivity {
 
     Button Add;
 
@@ -91,6 +92,7 @@ Toast.makeText(AddBusiness.this,"Fields must not be empty",Toast.LENGTH_LONG).sh
 }
 
     //Async class to send data
+   @SuppressWarnings("deprecation")
    public class AddBusinessAsync extends AsyncTask<Void, Void, String> {
 
         InputStream ins;
@@ -138,18 +140,18 @@ Toast.makeText(AddBusiness.this,"Fields must not be empty",Toast.LENGTH_LONG).sh
              pDialog.dismiss();
             if (connection) {
                 //Dialog to pop up if there is no connection or good data connection
-                AlertDialog.Builder ErorDialog = new AlertDialog.Builder(
+                AlertDialog.Builder ErrorDialog = new AlertDialog.Builder(
                         AddBusiness.this);
-                ErorDialog.setTitle("Connection Failure");
-                ErorDialog.setMessage("Error while coonnecting to the  server");
-                ErorDialog.setCancelable(false);
-                ErorDialog.setPositiveButton("OK",
+                ErrorDialog.setTitle("Connection Failure");
+                ErrorDialog.setMessage("Error while connecting to the  server");
+                ErrorDialog.setCancelable(false);
+                ErrorDialog.setPositiveButton("OK",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface Edialog, int id) {
                                 Edialog.cancel();
                             }
                         });
-                AlertDialog alert = ErorDialog.create();
+                AlertDialog alert = ErrorDialog.create();
                 alert.show();
             }
             // converting response to string
@@ -166,7 +168,7 @@ Toast.makeText(AddBusiness.this,"Fields must not be empty",Toast.LENGTH_LONG).sh
                 String res1 = sb.toString();
 
                 if (res1.trim().equalsIgnoreCase("success")) {
-                    Toast.makeText(AddBusiness.this,"successfull",Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddBusiness.this,"successful",Toast.LENGTH_LONG).show();
                 }
                 else {
 

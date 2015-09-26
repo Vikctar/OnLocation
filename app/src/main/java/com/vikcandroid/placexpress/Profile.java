@@ -80,6 +80,7 @@ public class Profile extends AppCompatActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
+    @SuppressWarnings("deprecation")
     public static class ProfileFragment extends Fragment {
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(7);
         boolean connection = false;
@@ -140,7 +141,7 @@ public class Profile extends AppCompatActivity {
 //placexpress is the folder name
                 try {
                     HttpClient httpclient = new DefaultHttpClient();
-                    HttpPost httppost = new HttpPost("http://192.168.43.199/placexpress/get_business.php");
+                    HttpPost httppost = new HttpPost("http://192.168.100.147/placexpress/get_business.php");
                     httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     HttpResponse response = httpclient.execute(httppost);
                     HttpEntity entity = response.getEntity();
