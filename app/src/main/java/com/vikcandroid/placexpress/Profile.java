@@ -20,22 +20,22 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
+
+//import org.apache.http.HttpEntity;
+//import org.apache.http.HttpResponse;
+//import org.apache.http.NameValuePair;
+//import org.apache.http.client.HttpClient;
+//import org.apache.http.client.entity.UrlEncodedFormEntity;
+//import org.apache.http.client.methods.HttpPost;
+//import org.apache.http.impl.client.DefaultHttpClient;
+//import org.apache.http.message.BasicNameValuePair;
 
 
 public class Profile extends AppCompatActivity {
@@ -82,7 +82,7 @@ public class Profile extends AppCompatActivity {
      */
     @SuppressWarnings("deprecation")
     public static class ProfileFragment extends Fragment {
-        ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(7);
+//        ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(7);
         boolean connection = false;
 
         int arraylength;
@@ -115,7 +115,7 @@ public class Profile extends AppCompatActivity {
             }
 
             id=getActivity().getIntent().getStringExtra("ID");
-            nameValuePairs.add(new BasicNameValuePair("sub_cat", id));
+//            nameValuePairs.add(new BasicNameValuePair("sub_cat", id));
             new GetHistory().execute();
             return rootView;
         }
@@ -140,12 +140,12 @@ public class Profile extends AppCompatActivity {
 //if ita emulator use 10.0.2.2/
 //placexpress is the folder name
                 try {
-                    HttpClient httpclient = new DefaultHttpClient();
-                    HttpPost httppost = new HttpPost("http://192.168.100.147/placexpress/get_business.php");
-                    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                    HttpResponse response = httpclient.execute(httppost);
-                    HttpEntity entity = response.getEntity();
-                    ins = entity.getContent();
+//                    HttpClient httpclient = new DefaultHttpClient();
+//                    HttpPost httppost = new HttpPost("http://192.168.100.147/placexpress/get_business.php");
+//                    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+//                    HttpResponse response = httpclient.execute(httppost);
+//                    HttpEntity entity = response.getEntity();
+//                    ins = entity.getContent();
 
                 } catch (Exception e) {
                     connection = true;

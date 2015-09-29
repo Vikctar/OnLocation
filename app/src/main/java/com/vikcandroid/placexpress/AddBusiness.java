@@ -14,19 +14,18 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+
+//import org.apache.http.HttpEntity;
+//import org.apache.http.HttpResponse;
+//import org.apache.http.NameValuePair;
+//import org.apache.http.client.HttpClient;
+//import org.apache.http.client.entity.UrlEncodedFormEntity;
+//import org.apache.http.client.methods.HttpPost;
+//import org.apache.http.impl.client.DefaultHttpClient;
+//import org.apache.http.message.BasicNameValuePair;
 
 
 @SuppressWarnings("deprecation")
@@ -39,7 +38,7 @@ public class AddBusiness extends AppCompatActivity {
     EditText editPhone;
     EditText editRemarks;
     EditText editEmail;
-    ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(7);
+//    ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(7);
     boolean connection = false;
 
 
@@ -76,16 +75,16 @@ Toast.makeText(AddBusiness.this,"Fields must not be empty",Toast.LENGTH_LONG).sh
 
     }
     else{
-        nameValuePairs.add(new BasicNameValuePair("business_name", editName
-                .getText().toString().trim()));
-        nameValuePairs.add(new BasicNameValuePair("business_address",
-                editAddress.getText().toString()));
-        nameValuePairs.add(new BasicNameValuePair("business_phone",
-                editPhone.getText().toString()));
-        nameValuePairs.add(new BasicNameValuePair("business_email",
-                editEmail.getText().toString()));
-        nameValuePairs.add(new BasicNameValuePair("business_remarks",
-                editRemarks.getText().toString()));
+//        nameValuePairs.add(new BasicNameValuePair("business_name", editName
+//                .getText().toString().trim()));
+//        nameValuePairs.add(new BasicNameValuePair("business_address",
+//                editAddress.getText().toString()));
+//        nameValuePairs.add(new BasicNameValuePair("business_phone",
+//                editPhone.getText().toString()));
+//        nameValuePairs.add(new BasicNameValuePair("business_email",
+//                editEmail.getText().toString()));
+//        nameValuePairs.add(new BasicNameValuePair("business_remarks",
+//                editRemarks.getText().toString()));
         new AddBusinessAsync().execute();
 
     }
@@ -119,12 +118,12 @@ Toast.makeText(AddBusiness.this,"Fields must not be empty",Toast.LENGTH_LONG).sh
 //if ita emulator use 10.0.2.2/
 //placexpress is the folder name
             try {
-                HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://192.168.43.199/placexpress/add_business1.php");
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                HttpResponse response = httpclient.execute(httppost);
-                HttpEntity entity = response.getEntity();
-                ins = entity.getContent();
+//                HttpClient httpclient = new DefaultHttpClient();
+//                HttpPost httppost = new HttpPost("http://192.168.43.199/placexpress/add_business1.php");
+//                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+//                HttpResponse response = httpclient.execute(httppost);
+//                HttpEntity entity = response.getEntity();
+//                ins = entity.getContent();
 
             } catch (Exception e) {
                 connection = true;
