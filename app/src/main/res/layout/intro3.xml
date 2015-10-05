@@ -16,7 +16,7 @@
         android:fontFamily="sans-serif-thin"
         android:textColor="#ffffff"
         android:paddingRight="32dp"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:text="Nearby"/>
 
     <LinearLayout
@@ -43,7 +43,7 @@
         android:textColor="#ffffff"
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:text="Find nearby places based on your current location"/>
     <TextView
         android:layout_width="fill_parent"

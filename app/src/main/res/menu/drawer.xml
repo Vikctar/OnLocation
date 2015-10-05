@@ -2,12 +2,43 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/navigation_item_1"
+            android:id="@+id/nav_categories"
             android:checked="true"
-            android:title="Home" />
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/categories" />
 
         <item
-            android:id="@+id/navigation_item_2"
-            android:title="Contact Us" />
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_event"
+            android:title="@string/events"/>
+
+        <item
+            android:id="@+id/nav_deals"
+            android:icon="@drawable/ic_event"
+            android:title="@string/deals"/>
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/about_us"/>
+
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/contact_us" />
     </group>
+
+    <item android:title="@string/nav_links">
+        <menu>
+            <item
+                android:id="@+id/nav_link_privacy"
+                android:icon="@drawable/ic_link"
+                android:title="@string/privacy_policy"/>
+            <item
+                android:id="@+id/nav_link_terms"
+                android:icon="@drawable/ic_link"
+                android:title="@string/terms_con"/>
+        </menu>
+    </item>
+
 </menu>

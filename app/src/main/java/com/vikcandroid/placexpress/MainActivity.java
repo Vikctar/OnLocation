@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     return getString(R.string.title_section1).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
+                    return getString(R.string.title_section3).toUpperCase(l);
 //                case 2:
 //                    return getString(R.string.title_section3).toUpperCase(l);
             }
