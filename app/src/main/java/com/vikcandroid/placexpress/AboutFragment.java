@@ -53,7 +53,7 @@ public class AboutFragment extends Fragment {
                     contactIntent.putExtra("android.intent.extra.EMAIL", new String[] {"support@placexpress.com"});
                     contactIntent.setClassName("com.google.android.gm", "com.google.android.gm.ComposeActivityGmail");
                     contactIntent.putExtra(Intent.EXTRA_SUBJECT, "Contact Support");
-                    contactIntent.putExtra(Intent.EXTRA_TEXT, "\n ONLocation Mobile App.");
+                    contactIntent.putExtra(Intent.EXTRA_TEXT, "\n placexpress Mobile App.");
                     contactIntent.setType("text/plain");
                     startActivity(contactIntent);
 

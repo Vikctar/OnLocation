@@ -1,5 +1,7 @@
 package com.vikcandroid.placexpress;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -16,6 +18,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -48,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
         setupToolbar();
-        setupNavigationView();
+        //setupNavigationView();
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -65,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up the tabLayout with a view pager
         tabLayout.setupWithViewPager(mViewPager);
+
+        // Navigation view
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        if (navigationView != null) {
+            setupNavigationView();
+        }
 
 //        // Set up the action bar.
 //        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
@@ -127,7 +136,54 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
-                        drawerLayout.closeDrawers();
+                        switch (menuItem.getItemId()) {
+                            case R.id.nav_categories:
+                                mViewPager.setCurrentItem(0);
+                                drawerLayout.closeDrawers();
+                                return true;
+
+                            case R.id.nav_events:
+                                Intent events = new Intent(Intent.ACTION_VIEW,
+                                        Uri.parse("http://placexpress.com/events.php"));
+                                startActivity(events);
+                                return true;
+
+                            case R.id.nav_deals:
+                                mViewPager.setCurrentItem(0);
+                                drawerLayout.closeDrawers();
+                                return true;
+
+                            case R.id.nav_about:
+                                mViewPager.setCurrentItem(1);
+                                drawerLayout.closeDrawers();
+                                return true;
+
+                            case R.id.nav_contact:
+                                try {
+                                    Intent contactIntent = new Intent(Intent.ACTION_SEND);
+                                    contactIntent.putExtra("android.intent.extra.EMAIL", new String[]{"support@placexpress.com"});
+                                    contactIntent.setClassName("com.google.android.gm", "com.google.android.gm.ComposeActivityGmail");
+                                    contactIntent.putExtra(Intent.EXTRA_SUBJECT, "Contact Support");
+                                    contactIntent.putExtra(Intent.EXTRA_TEXT, "\n placexpress Mobile App.");
+                                    contactIntent.setType("text/plain");
+                                    startActivity(contactIntent);
+
+                                } catch (Exception e) {
+                                    Toast.makeText(MainActivity.this, "Gmail Application Not Found", Toast.LENGTH_LONG).show();
+                                }
+
+                            case R.id.nav_link_privacy:
+                                Intent privacy = new Intent(Intent.ACTION_VIEW,
+                                        Uri.parse("http://placexpress.com/privacypolicy.php"));
+                                startActivity(privacy);
+                                return true;
+
+                            case R.id.nav_link_terms:
+                                Intent terms = new Intent(Intent.ACTION_VIEW,
+                                        Uri.parse("http://placexpress.com/terms-and-conditions.php"));
+                                startActivity(terms);
+                                return true;
+                        }
 
                         return true;
                     }
