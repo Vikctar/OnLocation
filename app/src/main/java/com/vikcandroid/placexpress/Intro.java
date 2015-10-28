@@ -21,8 +21,12 @@ public class Intro extends AppIntro2 {
         startActivity(intent);
     }
 
+    /**
+     * Called when done is pressed
+     */
     @Override
     public void onDonePressed() {
         loadMainActivity();
+        finish(); // will kill the activity so that it wont be recreated when back is pressed inside main activity
     }
 }
