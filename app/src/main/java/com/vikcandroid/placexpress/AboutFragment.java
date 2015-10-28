@@ -1,6 +1,7 @@
 package com.vikcandroid.placexpress;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,24 +28,36 @@ public class AboutFragment extends Fragment {
         trPrivacy = (TableRow) rootView.findViewById(R.id.tr_privacy);
         trTerms = (TableRow) rootView.findViewById(R.id.tr_terms);
 
+
+        /**
+         * Link leads to privacy policy page at
+         * http://placexpress.com/privacypolicy.php
+         */
         trPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent privacyIntent = new Intent(getActivity(), ViewWeb.class);
-                privacyIntent.putExtra("KEY", "1");
-                startActivity(privacyIntent);
+                Intent privacy = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://placexpress.com/privacypolicy.php"));
+                startActivity(privacy);
             }
         });
 
+        /**
+         * Link leads to terms-ad-condition page at
+         * http://placexpress.com/terms-and-conditions.php
+         */
         trTerms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent termsIntent = new Intent(getActivity(), ViewWeb.class);
-                termsIntent.putExtra("KEY", 2);
-                startActivity(termsIntent);
+                Intent privacy = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://placexpress.com/terms-and-conditions.php"));
+                startActivity(privacy);
             }
         });
 
+        /**
+         * Open a compose page in gmail mobile app
+         */
         trContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
