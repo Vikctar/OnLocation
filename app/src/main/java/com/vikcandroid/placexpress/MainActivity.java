@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
                                 } catch (Exception e) {
                                     Toast.makeText(MainActivity.this, "Gmail Application Not Found", Toast.LENGTH_LONG).show();
                                 }
+                                break; // break, so that the next case is not loaded by default
 
                             case R.id.nav_link_privacy:
                                 Intent privacy = new Intent(Intent.ACTION_VIEW,
