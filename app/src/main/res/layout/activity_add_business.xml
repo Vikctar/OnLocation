@@ -1,44 +1,98 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="wrap_content" android:id="@+id/scroll_view1"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.vikcandroid.placexpress.AddBusiness">
 
-    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText android:id="@+id/edit_name" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip"
-            android:hint="Name of Business " android:ems="10" />
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:ems="10"
+            android:hint="Name of Business " />
 
-        <EditText android:id="@+id/edit_address" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip"
-            android:hint="Address " android:ems="10" />
+        <EditText
+            android:id="@+id/edit_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:ems="10"
+            android:hint="Address " />
 
-        <EditText android:id="@+id/edit_phone" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip"
-            android:hint="Telephone" android:ems="10" android:inputType="phone" />
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:ems="10"
+            android:hint="Telephone"
+            android:inputType="phone" />
 
-        <EditText android:id="@+id/edit_email" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip"
-            android:hint="Email Address" android:ems="10" android:inputType="textEmailAddress" />
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:ems="10"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress" />
 
-        <Spinner android:entries="@array/category_arrays" android:id="@+id/spinner_cat" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip"
-            android:layout_marginRight="15.0dip" android:prompt="@string/category_prompt"
+        <Spinner
+            android:id="@+id/spinner_cat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:entries="@array/category_arrays"
+            android:prompt="@string/category_prompt"
             android:spinnerMode="dialog" />
 
-        <Spinner android:entries="@array/subcategory_arrays" android:id="@+id/spinner_sub_cat" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip"
-            android:layout_marginRight="15.0dip" android:prompt="@string/subcategory_prompt"
+        <Spinner
+            android:id="@+id/spinner_sub_cat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:entries="@array/subcategory_arrays"
             android:focusableInTouchMode="true"
+            android:prompt="@string/subcategory_prompt"
             android:spinnerMode="dialog" />
 
-        <EditText android:id="@+id/add_remark" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip"
-            android:hint="Remarks" android:ems="10" />
+        <EditText
+            android:id="@+id/add_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:ems="10"
+            android:hint="Remarks" />
 
-        <Button android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@+id/btnAdd"
-            android:background="@drawable/iconaddbtn" android:layout_width="100.0dip" android:layout_height="100.0dip"
-            android:layout_marginTop="20.0dip" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="100.0dip"
+            android:layout_height="100.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20.0dip"
+            android:background="@drawable/iconaddbtn"
+            android:gravity="center_horizontal" />
     </LinearLayout>
 
 
