@@ -57,4 +57,6 @@
     <string name="events">Events</string>
     <string name="categories">Categories</string>
     <string name="about_us">About Us</string>
+    <string name="title_activity_transport">Transport</string>
+    <string name="activity_business">Business Services</string>
 </resources>
